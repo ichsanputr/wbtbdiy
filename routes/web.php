@@ -17,6 +17,8 @@ use App\Http\Livewire\Rtl;
 use App\Http\Livewire\LaravelExamples\UserProfile;
 use App\Http\Livewire\LaravelExamples\UserManagement;
 
+use App\Http\Controllers\IndexController;
+
 use Illuminate\Http\Request;
 
 /*
@@ -30,7 +32,7 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::get('/', Login::class)->name('login');
+Route::get('/', [IndexController::class, 'index'])->name('index');
 
 Route::get('/sign-up', SignUp::class)->name('sign-up');
 Route::get('/login', Login::class)->name('login');
