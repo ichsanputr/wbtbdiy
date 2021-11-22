@@ -20,11 +20,11 @@
                     @include('layouts.footers.auth.footer')
                 </div>
             </div>
-            @include('components.plugins.fixed-plugin')
+            {{-- @include('components.plugins.fixed-plugin') --}}
         @else
             @include('layouts.navbars.auth.sidebar')
             @include('layouts.navbars.auth.nav')
-            @include('components.plugins.fixed-plugin')
+            {{-- @include('components.plugins.fixed-plugin') --}}
             {{ $slot }}
             <main>
                 <div class="container-fluid">
@@ -40,18 +40,18 @@
     @guest
         {{-- If the user is on the login page --}}
         @if (!auth()->check() && in_array(request()->route()->getName(),['login'],))
-            @include('layouts.navbars.guest.login')
+            {{-- @include('layouts.navbars.guest.login') --}}
             {{ $slot }}
-            <div class="mt-5">
+            {{-- <div class="mt-5">
                 @include('layouts.footers.guest.with-socials')
-            </div>
+            </div> --}}
 
             {{-- If the user is on the sign up page --}}
         @elseif (!auth()->check() && in_array(request()->route()->getName(),['sign-up'],))
             <div>
-                @include('layouts.navbars.guest.sign-up')
+                {{-- @include('layouts.navbars.guest.sign-up') --}}
                 {{ $slot }}
-                @include('layouts.footers.guest.with-socials')
+                {{-- @include('layouts.footers.guest.with-socials') --}}
             </div>
         @endif
     @endguest

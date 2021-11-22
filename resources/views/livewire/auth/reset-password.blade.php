@@ -1,5 +1,5 @@
 <div>
-    @include('layouts.navbars.guest.login')
+    {{-- @include('layouts.navbars.guest.login') --}}
     <div class="page-header section-height-75">
         <div class="container">
             <div class="row">
@@ -74,7 +74,7 @@
                 <div class="col-md-6">
                     <div class="oblique position-absolute top-0 h-100 d-md-block d-none me-n8">
                         <div class="oblique-image bg-cover position-absolute fixed-top ms-auto h-100 z-index-0 ms-n6"
-                            style="background-image:url('../assets/img/curved-images/curved6.jpg')"></div>
+                            style="background-image:url('https://www.kratonjogja.id/upload/images/peristiwa/img_v3hHFj8.jpg')"></div>
                     </div>
                 </div>
             </div>
