@@ -33,8 +33,8 @@ use Illuminate\Http\Request;
 */
 
 Route::get('/', [IndexController::class, 'index'])->name('index');
-Route::get('/pencatatan', [IndexController::class, 'pencatatan'])->name('pencatatan');
-Route::get('/pengusulan', [IndexController::class, 'pengusulan'])->name('pengusulan');
+Route::get('/pencatatan', [IndexController::class, 'pencatatan'])->name('depan-pencatatan');
+Route::get('/pengusulan', [IndexController::class, 'pengusulan'])->name('depan-pengusulan');
 Route::get('/detail', [IndexController::class, 'detail'])->name('detail');
 
 
@@ -53,7 +53,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/static-sign-in', StaticSignIn::class)->name('sign-in');
     Route::get('/static-sign-up', StaticSignUp::class)->name('static-sign-up');
     Route::get('/rtl', Rtl::class)->name('rtl');
-    Route::get('/pengusulan', UserProfile::class)->name('pengusulan');
-    Route::get('/pencatatan', UserManagement::class)->name('pencatatan');
+    Route::get('/user/pengusulan', UserProfile::class)->name('pengusulan');
+    Route::get('/user/pencatatan', UserManagement::class)->name('pencatatan');
 });
 
