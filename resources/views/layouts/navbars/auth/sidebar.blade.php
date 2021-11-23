@@ -5,7 +5,7 @@
             aria-hidden="true" id="iconSidenav"></i>
         <a class="navbar-brand m-0" href="{{ route('index') }}">
             <!-- <img src="../assets/img/logo-ct.png" class="navbar-brand-img h-100" alt="..."> -->
-            <span class="ms-1 font-weight-bold">WBTB DIY</span>
+            <span class="ms-1 font-weight-bold">WBTb DIY</span>
         </a>
     </div>
     <hr class="horizontal dark mt-0">
@@ -44,8 +44,8 @@
                 <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Fitur Utama</h6>
             </li>
             <li class="nav-item">
-                <a class="nav-link {{ Route::currentRouteName() == 'user-profile' ? 'active' : '' }}"
-                    href="{{ route('user-profile') }}">
+                <a class="nav-link {{ Route::currentRouteName() == 'pengusulan' ? 'active' : '' }}"
+                    href="{{ route('pengusulan') }}">
                     <div
                         class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                         <svg width="12px" height="12px" viewBox="0 0 46 42" version="1.1"
@@ -75,18 +75,18 @@
                 </a>
             </li>
             <li class="nav-item pb-2">
-                <a class="nav-link {{ Route::currentRouteName() == 'user-management' ? 'active' : '' }}"
-                    href="{{ route('user-management') }}">
+                <a class="nav-link {{ Route::currentRouteName() == 'pencatatan' ? 'active' : '' }}"
+                    href="{{ route('pencatatan') }}">
                     <div
                         class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                         <i style="font-size: 1rem;" class="fas fa-lg fa-list-ul ps-2 pe-2 text-center
-                        {{ in_array(request()->route()->getName(),['user-management']) ? 'text-white' : 'text-dark' }}"></i>
+                        {{ in_array(request()->route()->getName(),['pencatatan']) ? 'text-white' : 'text-dark' }}"></i>
                     </div>
                     <span class="nav-link-text ms-1">Pencatatan</span>
                 </a>
             </li>
 
-            <li class="nav-item mt-2">
+            {{-- <li class="nav-item mt-2">
                 <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Pengaturan</h6>
             </li>
             <li class="nav-item">
@@ -207,7 +207,7 @@
                     </div>
                     <span class="nav-link-text ms-1">User</span>
                 </a>
-            </li>
+            </li> --}}
         </ul>
     </div>
     

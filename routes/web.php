@@ -34,6 +34,8 @@ use Illuminate\Http\Request;
 
 Route::get('/', [IndexController::class, 'index'])->name('index');
 Route::get('/pencatatan', [IndexController::class, 'pencatatan'])->name('pencatatan');
+Route::get('/pengusulan', [IndexController::class, 'pengusulan'])->name('pengusulan');
+Route::get('/detail', [IndexController::class, 'detail'])->name('detail');
 
 
 Route::get('/sign-up', SignUp::class)->name('sign-up');
@@ -51,7 +53,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/static-sign-in', StaticSignIn::class)->name('sign-in');
     Route::get('/static-sign-up', StaticSignUp::class)->name('static-sign-up');
     Route::get('/rtl', Rtl::class)->name('rtl');
-    Route::get('/laravel-user-profile', UserProfile::class)->name('user-profile');
-    Route::get('/laravel-user-management', UserManagement::class)->name('user-management');
+    Route::get('/pengusulan', UserProfile::class)->name('pengusulan');
+    Route::get('/pencatatan', UserManagement::class)->name('pencatatan');
 });
 

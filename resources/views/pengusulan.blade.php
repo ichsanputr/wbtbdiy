@@ -203,8 +203,8 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-7 text-center mx-auto">
-            <h1 class="text-white pt-3 mt-n5">Pencatatan</h1>
-            <p class="lead text-white mt-3">Berisi Kumpulan Informasi Pencatatan WBTb yang dilaporkan oleh User.</p>
+            <h1 class="text-white pt-3 mt-n5">Pengusulan</h1>
+            <p class="lead text-white mt-3">Berisi Kumpulan Informasi Pengusulan WBTb yang dilaporkan oleh User.</p>
           </div>
         </div>
       </div>
@@ -236,7 +236,7 @@
     <div class="container">
       <div class="row bg-white shadow-lg mt-n6 border-radius-md pb-4 p-3 position-relative w-75 mx-auto">
         <div class="col-lg-8 mt-lg-n2 mt-2">
-          <label>Cari Pencatatan</label>
+          <label>Cari Pengusulan</label>
           <div class="input-group">
             <span class="input-group-text"><i class="fas fa-search" aria-hidden="true"></i></span>
             <input class="form-control" placeholder="Masukan kata kunci" type="text">

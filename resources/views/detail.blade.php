@@ -29,7 +29,7 @@
       <div class="col-12">
         <nav class="navbar navbar-expand-lg  blur blur-rounded top-0 z-index-fixed shadow position-absolute my-3 py-2 start-0 end-0 mx-4">
           <div class="container-fluid">
-            <a class="navbar-brand font-weight-bolder ms-sm-3" href="{{ url('/') }}" rel="tooltip" title="Designed and Coded oleh Creative Tim" data-placement="bottom">
+            <a class="navbar-brand font-weight-bolder ms-sm-3" href="{{ url('/') }}" rel="tooltip" title="Designed and Coded oleh Creative Tim" data-placement="bottom" target="_blank">
               <!-- <img src="{{ asset('assets/img/logo.png') }}" alt="" width="84" height="64"> -->
               WBTb DIY
             </a>
@@ -198,227 +198,91 @@
       </div>
     </div>
   </div>
-  <header class="header-2">
-    <div class="page-header min-vh-100" style="background-image: url('{{ asset('assets/img/home.jpg') }}')">
+
+  <header>
+    <div class="page-header min-vh-85" style="background-position-y: 50%;">
+      <div class="position-absolute border-radius-lg border-top-start-radius-0 border-top-end-radius-0 border-bottom-end-radius-0 fixed-top ms-auto w-75 h-100 z-index-0 d-none d-sm-none d-md-block" style="background-image: url('https://www.kratonjogja.id/upload/images/assets/srimpi-muncar-09-08-2020-001.jpg'); background-size:cover;">
+      </div>
       <div class="container">
         <div class="row">
-          <div class="col-lg-7 text-center mx-auto">
-            <h1 class="text-white pt-3 mt-n5">Pencatatan</h1>
-            <p class="lead text-white mt-3">Berisi Kumpulan Informasi Pencatatan WBTb yang dilaporkan oleh User.</p>
+          <div class="col-lg-7 d-flex justify-content-center flex-column">
+            <div class="card card-body blur d-flex justify-content-center px-5 shadow-lg mt-lg-5 mt-3 py-5">
+              <strong class="text-gradient text-primary mb-0">Seni Pertunjukan</strong>
+              <h3 class="mb-4">Tarian Srimpi Muncar</h3>
+              {{-- <p class="lead pe-sm-5 me-sm-5">The time is now for it be okay to be great. People in this world shun people for being nice. </p> --}}
+              <strong class="mt-3">Bagikan di Sosial Media</strong>
+              <div class="d-flex justify-content-start">
+                <a href="javascript:;"><i class="fab fa-facebook text-dark me-4 text-lg" aria-hidden="true"></i></a>
+                <a href="javascript:;"><i class="fab fa-twitter text-dark me-4 text-lg" aria-hidden="true"></i></a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-      {{-- <div class="position-absolute w-100 z-index-1 bottom-0">
-        <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 40" preserveAspectRatio="none" shape-rendering="auto">
-          <defs>
-            <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
-          </defs>
-          <g class="moving-waves">
-            <use xlink:href="#gentle-wave" x="48" y="-1" fill="rgba(255,255,255,0.40" />
-            <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.35)" />
-            <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.25)" />
-            <use xlink:href="#gentle-wave" x="48" y="8" fill="rgba(255,255,255,0.20)" />
-            <use xlink:href="#gentle-wave" x="48" y="13" fill="rgba(255,255,255,0.15)" />
-            <use xlink:href="#gentle-wave" x="48" y="16" fill="rgba(255,255,255,0.95" />
-          </g>
-        </svg>
-      </div> --}}
     </div>
   </header>
-  <section class="pt-3 pb-4" id="count-stats">
-    {{-- <div class="position-relative overflow-hidden" style="height:36px;margin-top:-35px;">
-      <div class="w-full absolute bottom-0 start-0 end-0" style="transform: scale(2);transform-origin: top center;color: #fff;">
-        <svg viewBox="0 0 2880 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M0 48H1437.5H2880V0H2160C1442.5 52 720 0 720 0H0V48Z" fill="currentColor"></path>
-        </svg>
-      </div>
-    </div> --}}
+
+  <section class="py-5 mt-5">
     <div class="container">
-      <div class="row bg-white shadow-lg mt-n6 border-radius-md pb-4 p-3 position-relative w-75 mx-auto">
-        <div class="col-lg-8 mt-lg-n2 mt-2">
-          <label>Cari Pencatatan</label>
-          <div class="input-group">
-            <span class="input-group-text"><i class="fas fa-search" aria-hidden="true"></i></span>
-            <input class="form-control" placeholder="Masukan kata kunci" type="text">
-          </div>
-        </div>
-        <div class="col-lg-4 d-flex align-items-center mt-lg-auto mt-2">
-          <button type="button" class="btn bg-gradient-primary w-100 mb-0">Cari</button>
+      <div class="row">
+        <div class="col-lg-10 ms-auto me-auto">
+          <h6 class="opacity-7 text-uppercase font-weight-bolder text-sm">Detail</h6>
+          <h3 class="title mb-4">Tarian Srimpi Muncar</h3>
+          <p class="text-dark" style="text-align:justify">
+            Srimpi Muncar merupakan tari klasik Keraton Yogyakarta Yasan Dalem (karya) Sri Sultan Hamengku Buwono VI (1855-1877), diciptakan pada 1857, dan disempurnakan pada era Sri Sultan Hamengku Buwono VIII (1921-1939). ‘Muncar’ berarti gemilang atau bersinar. Dibawakan oleh empat penari putri, beksan ini mengambil cuplikan cerita dari Kagungan Dalem Serat Menak. <br/><br/>Dikisahkan Dewi Adaninggar, putri Cina dari negeri Tartaripura berperang melawan Dewi Kelaswara dari negeri Kelan untuk memperjuangkan cinta Wong Agung Jayengrana. Kedua putri yang sepadan itu saling adu ketangkasan dan kekuatan hingga akhirnya Dewi Kelaswara memenangkan pertarungan. Karena adanya tokoh putri Cina ini, Srimpi Muncar juga dikenal sebagai Srimpi Cina. <br/><br/>Dalam pementasan, kedua tokoh tersebut dibedakan terkait ragam gerak, tata busana, dan tata riasnya. Keduanya membawa senjata; keris untuk Dewi Kelaswara dan cundrik untuk Dewi Adaninggar. Dua senjata ini digunakan dalam adegan peperangan.
+          </p>
         </div>
       </div>
+      <section class="py-7 position-relative">
+        <div id="carousel-testimonials" class="carousel slide carousel-team">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <div class="container">
+                <div class="row align-items-center">
+                  <div class="col-md-5 me-lg-auto position-relative">
+                    <h6 class="opacity-7 text-uppercase font-weight-bolder text-sm fadeIn4 fadeInBottom">Galeri</h6>
+                    <strong class="text-dark font-weight-bolder fadeIn2 fadeInBottom">Foto Warisan Budaya</strong>
+                    
+                  </div>
+                  <div class="col-md-5 ms-lg-auto">
+                    <div class="p-3">
+                      <img class="w-100 border-radius-md max-height-600 fadeIn2 fadeInBottom" src="https://www.kratonjogja.id/upload/images/assets/srimpi-muncar-09-08-2020-001.jpg" alt="First slide">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="container">
+                <div class="row align-items-center">
+                  <div class="col-md-5 me-lg-auto position-relative">
+                    <h6 class="opacity-7 text-uppercase font-weight-bolder text-sm fadeIn4 fadeInBottom">Galeri</h6>
+                    <strong class="text-dark font-weight-bolder fadeIn2 fadeInBottom">Video Warisan Budaya</strong>
+                  </div>
+                  <div class="col-md-5 ms-lg-auto">
+                    <div class="p-3">
+                      <iframe width="560" height="315" src="https://www.youtube.com/embed/ql0I3hdKR8U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="position-relative mt-n6">
+            <a class="carousel-control-prev text-dark position-absolute bottom-0 start-0" href="#carousel-testimonials" role="button" data-bs-slide="prev">
+              <i class="fas fa-2x fa-chevron-left position-absolute start-0 ms-3" aria-hidden="true"></i>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next text-dark position-absolute bottom-0 start-0 ms-4" href="#carousel-testimonials" role="button" data-bs-slide="next">
+              <i class="fas fa-2x fa-chevron-right" aria-hidden="true"></i>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+        </div>
+      </section>
     </div>
+
   </section>
-  
-  <div class="container mt-7">
-    <div class="row">
-      <div class="col-lg-12">
-        <div class="row">
-          <div class="col-lg-6 justify-content-center d-flex flex-column">
-            <div class="card">
-              <div class="d-block blur-shadow-image">
-                <img src="https://www.kratonjogja.id/upload/images/assets/srimpi-muncar-09-08-2020-001.jpg" alt="img-blur-shadow-blog-2" class="img-fluid border-radius-lg">
-              </div>
-            <div class="colored-shadow" style="background-image: url(&quot;https://www.kratonjogja.id/upload/images/assets/srimpi-muncar-09-08-2020-001.jpg&quot;);"></div></div>
-          </div>
-          <div class="col-lg-6 justify-content-center d-flex flex-column pl-lg-5 pt-lg-0 pt-3">
-            <h6 class="category text-primary mt-3">Seni Pertunjukan</h6>
-            <h3 class="card-title">
-              <a href="{{ url('detail') }}" class="text-dark">Tarian Srimpi Muncar</a>
-            </h3>
-            <p class="card-description">
-              Srimpi Muncar merupakan tari klasik Keraton Yogyakarta Yasan Dalem (karya) Sri Sultan Hamengku Buwono VI (1855-1877), diciptakan pada 1857, dan disempurnakan pada era Sri Sultan Hamengku Buwono VIII (1921-1939). ‘Muncar’ berarti gemilang atau bersinar.… <a href="{{ url('detail') }}" class="text-darker icon-move-right text-sm">Read More
-                <i class="fas fa-arrow-right text-xs ms-1" aria-hidden="true"></i>
-              </a>
-            </p>
-            <p class="author">
-              oleh <a href="{{ url('detail') }}" class="ms-1"><span class="font-weight-bold text-primary"> Sarah Aulina</span></a>, 2 hari yang lalu
-            </p>
-          </div>
-        </div>
-        <div class="row mt-5">
-          <div class="col-lg-6 justify-content-center d-flex flex-column">
-            <div class="card">
-              <div class="d-block blur-shadow-image">
-                <img src="https://images.bisnis-cdn.com/posts/2021/03/22/1370932/sayur-lodeh.jpg" alt="img-blur-shadow-blog-2" class="img-fluid border-radius-lg">
-              </div>
-            <div class="colored-shadow" style="background-image: url(&quot;https://images.bisnis-cdn.com/posts/2021/03/22/1370932/sayur-lodeh.jpg&quot;);"></div></div>
-          </div>
-          <div class="col-lg-6 justify-content-center d-flex flex-column pl-lg-5 pt-lg-0 pt-3">
-            <h6 class="category text-warning mt-3">Kuliner Tradisional</h6>
-            <h3 class="card-title">
-              <a href="{{ url('detail') }}" class="text-dark">Sayur Lodeh</a>
-            </h3>
-            <p class="card-description">
-              Kisah sayur lodeh ini berawal ketika suatu hari pada 1931 wabah menyerang Yogyakarta, Sultan pun memerintahkan warganya untuk memasak sayur lodeh, dan berdiam diri di rumah selama 49 hari. Lalu wabah berakhir...
-              <a href="{{ url('detail') }}" class="text-darker icon-move-right text-sm">Read More
-                <i class="fas fa-arrow-right text-xs ms-1" aria-hidden="true"></i>
-              </a>
-            </p>
-            <p class="author">
-              oleh <a href="{{ url('detail') }}" class="ms-1"><span class="font-weight-bold text-warning"> Sarah Aulina</span></a>, 2 hari yang lalu
-            </p>
-          </div>
-        </div>
-        <div class="row mt-5">
-          <div class="col-lg-6 justify-content-center d-flex flex-column">
-            <div class="card">
-              <div class="d-block blur-shadow-image">
-                <img src="https://www.kratonjogja.id/upload/images/assets/srimpi-muncar-09-08-2020-001.jpg" alt="img-blur-shadow-blog-2" class="img-fluid border-radius-lg">
-              </div>
-            <div class="colored-shadow" style="background-image: url(&quot;https://www.kratonjogja.id/upload/images/assets/srimpi-muncar-09-08-2020-001.jpg&quot;);"></div></div>
-          </div>
-          <div class="col-lg-6 justify-content-center d-flex flex-column pl-lg-5 pt-lg-0 pt-3">
-            <h6 class="category text-primary mt-3">Seni Pertunjukan</h6>
-            <h3 class="card-title">
-              <a href="{{ url('detail') }}" class="text-dark">Tarian Srimpi Muncar</a>
-            </h3>
-            <p class="card-description">
-              Srimpi Muncar merupakan tari klasik Keraton Yogyakarta Yasan Dalem (karya) Sri Sultan Hamengku Buwono VI (1855-1877), diciptakan pada 1857, dan disempurnakan pada era Sri Sultan Hamengku Buwono VIII (1921-1939). ‘Muncar’ berarti gemilang atau bersinar.… <a href="{{ url('detail') }}" class="text-darker icon-move-right text-sm">Read More
-                <i class="fas fa-arrow-right text-xs ms-1" aria-hidden="true"></i>
-              </a>
-            </p>
-            <p class="author">
-              oleh <a href="{{ url('detail') }}" class="ms-1"><span class="font-weight-bold text-primary"> Sarah Aulina</span></a>, 2 hari yang lalu
-            </p>
-          </div>
-        </div>
-        <div class="row mt-5">
-          <div class="col-lg-6 justify-content-center d-flex flex-column">
-            <div class="card">
-              <div class="d-block blur-shadow-image">
-                <img src="https://images.bisnis-cdn.com/posts/2021/03/22/1370932/sayur-lodeh.jpg" alt="img-blur-shadow-blog-2" class="img-fluid border-radius-lg">
-              </div>
-            <div class="colored-shadow" style="background-image: url(&quot;https://images.bisnis-cdn.com/posts/2021/03/22/1370932/sayur-lodeh.jpg&quot;);"></div></div>
-          </div>
-          <div class="col-lg-6 justify-content-center d-flex flex-column pl-lg-5 pt-lg-0 pt-3">
-            <h6 class="category text-warning mt-3">Kuliner Tradisional</h6>
-            <h3 class="card-title">
-              <a href="{{ url('detail') }}" class="text-dark">Sayur Lodeh</a>
-            </h3>
-            <p class="card-description">
-              Kisah sayur lodeh ini berawal ketika suatu hari pada 1931 wabah menyerang Yogyakarta, Sultan pun memerintahkan warganya untuk memasak sayur lodeh, dan berdiam diri di rumah selama 49 hari. Lalu wabah berakhir...
-              <a href="{{ url('detail') }}" class="text-darker icon-move-right text-sm">Read More
-                <i class="fas fa-arrow-right text-xs ms-1" aria-hidden="true"></i>
-              </a>
-            </p>
-            <p class="author">
-              oleh <a href="{{ url('detail') }}" class="ms-1"><span class="font-weight-bold text-warning"> Sarah Aulina</span></a>, 2 hari yang lalu
-            </p>
-          </div>
-        </div>
-        {{-- <div class="row">
-          <div class="row mt-5">
-            <div class="col-lg-4 mb-lg-0 mb-4">
-              <!-- Start Card Blog Fullbackground - text centered -->
-              <a href="{{ url('detail') }}">
-                <div class="card card-background move-on-hover">
-                  <div class="full-background" style="background-image: url('https://raw.githubusercontent.com/creativetimofficial/public-assets/master/soft-ui-design-system/assets/img/color-ananas.jpg')"></div>
-                  <div class="card-body pt-12">
-                    <h4 class="text-white">History of Industry</h4>
-                    <p>Knowing the history better than anybody else is a huge career advantage, which is wild because even though it’s so simple, few people read up.</p>
-                  </div>
-                </div>
-              </a>
-              <!-- End Card Blog Fullbackground - text centered -->
-            </div>
-            <div class="col-lg-4 mb-lg-0 mb-4">
-              <!-- Start Card Blog Fullbackground - text centered -->
-              <a href="{{ url('detail') }}">
-                <div class="card card-background move-on-hover">
-                  <div class="full-background" style="background-image: url('https://raw.githubusercontent.com/creativetimofficial/public-assets/master/soft-ui-design-system/assets/img/color-banana.jpg')"></div>
-                  <div class="card-body pt-12">
-                    <h4 class="text-white">Digital Representation</h4>
-                    <p>Every protocol has a token, to where every application has a token, to where every valuable representation of an object or person has token.</p>
-                  </div>
-                </div>
-              </a>
-              <!-- End Card Blog Fullbackground - text centered -->
-            </div>
-            <div class="col-lg-4">
-              <!-- Start Card Blog Fullbackground - text centered -->
-              <a href="{{ url('detail') }}">
-                <div class="card card-background move-on-hover">
-                  <div class="full-background" style="background-image: url('https://raw.githubusercontent.com/creativetimofficial/public-assets/master/soft-ui-design-system/assets/img/color-orange.jpg')"></div>
-                  <div class="card-body pt-12">
-                    <h4 class="text-white">Beginning of an Infinity</h4>
-                    <p>Website visitors today demand a frictionless user expericence — especially when using search. Because of the hight standards.</p>
-                  </div>
-                </div>
-              </a>
-              <!-- End Card Blog Fullbackground - text centered -->
-            </div>
-          </div>
-        </div> --}}
-        <ul class="pagination pagination-primary my-5">
-          <li class="page-item">
-            <a class="page-link" href="{{ url('detail') }}" aria-label="Previous">
-              <span aria-hidden="true"><i class="fa fa-angle-double-left" aria-hidden="true"></i></span>
-            </a>
-          </li>
-          <li class="page-item">
-            <a class="page-link" href="{{ url('detail') }}">1</a>
-          </li>
-          <li class="page-item">
-            <a class="page-link" href="{{ url('detail') }}">2</a>
-          </li>
-          <li class="page-item active">
-            <a class="page-link" href="{{ url('detail') }}">3</a>
-          </li>
-          <li class="page-item">
-            <a class="page-link" href="{{ url('detail') }}">4</a>
-          </li>
-          <li class="page-item">
-            <a class="page-link" href="{{ url('detail') }}">5</a>
-          </li>
-          <li class="page-item">
-            <a class="page-link" href="{{ url('detail') }}" aria-label="Next">
-              <span aria-hidden="true"><i class="fa fa-angle-double-right" aria-hidden="true"></i></span>
-            </a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
   
   <!-- END Section Content -->
   <!-- -------   START PRE-FOOTER 2 - simple social line w/ title & 3 buttons    -------- -->

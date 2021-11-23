@@ -15,4 +15,14 @@ class IndexController extends Controller
     {
         return view("pencatatan");
     }
+
+    public function pengusulan()
+    {
+        return view("pengusulan");
+    }
+
+    public function detail()
+    {
+        return view("detail");
+    }
 }
