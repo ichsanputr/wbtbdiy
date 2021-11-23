@@ -29,9 +29,9 @@
       <div class="col-12">
         <nav class="navbar navbar-expand-lg  blur blur-rounded top-0 z-index-fixed shadow position-absolute my-3 py-2 start-0 end-0 mx-4">
           <div class="container-fluid">
-            <a class="navbar-brand font-weight-bolder ms-sm-3" href="https://demos.creative-tim.com{{ asset('assets') }}/soft-ui-design-system/index.html" rel="tooltip" title="Designed and Coded by Creative Tim" data-placement="bottom" target="_blank">
+            <a class="navbar-brand font-weight-bolder ms-sm-3" href="{{ url('/') }}" rel="tooltip" title="Designed and Coded by Creative Tim" data-placement="bottom" target="_blank">
               <!-- <img src="{{ asset('assets/img/logo.png') }}" alt="" width="84" height="64"> -->
-              WBTB DIY
+              WBTb DIY
             </a>
             <button class="navbar-toggler shadow-none ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon mt-2">
@@ -43,18 +43,18 @@
             <div class="collapse navbar-collapse pt-3 pb-2 py-lg-0 w-100" id="navigation">
               <ul class="navbar-nav navbar-nav-hover ms-lg-8 ps-lg-5 w-100">
                 <li class="nav-item dropdown dropdown-hover mx-2">
-                  <a class="nav-link ps-2 d-flex justify-content-between cursor-pointer align-items-center" id="dropdownMenuPages" data-bs-toggle="dropdown" aria-expanded="false">
+                  <a class="nav-link ps-2 d-flex justify-content-between cursor-pointer align-items-center" id="dropdownMenuPages" href="{{ url('pencatatan') }}" aria-expanded="false">
                     Pencatatan
                   </a>
                 </li>
                 <li class="nav-item dropdown dropdown-hover mx-2">
-                  <a class="nav-link ps-2 d-flex justify-content-between cursor-pointer align-items-center" id="dropdownMenuBlocks" data-bs-toggle="dropdown" aria-expanded="false">
+                  <a class="nav-link ps-2 d-flex justify-content-between cursor-pointer align-items-center" id="dropdownMenuBlocks" href="{{ url('') }}" aria-expanded="false">
                     Pengusulan
                   </a>
                   
                 </li>
                 <li class="nav-item dropdown dropdown-hover mx-2">
-                  <a class="nav-link ps-2 d-flex justify-content-between cursor-pointer align-items-center" id="dropdownMenuDocs" data-bs-toggle="dropdown" aria-expanded="false">
+                  <a class="nav-link ps-2 d-flex justify-content-between cursor-pointer align-items-center" id="dropdownMenuDocs" href="{{ url('') }}" aria-expanded="false">
                     Berita
                   </a>
                   
@@ -203,7 +203,7 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-7 text-center mx-auto">
-            <h1 class="text-white pt-3 mt-n5">WBTB DIY</h1>
+            <h1 class="text-white pt-3 mt-n5">WBTb DIY</h1>
             <p class="lead text-white mt-3">Database penyimpanan dan profile karya Warisan Budaya Tak Benda Daerah Istimewa Yogyakarta.</p>
           </div>
         </div>
@@ -386,8 +386,8 @@
       <div class="row">
         <div class="row text-center my-sm-5 mt-5">
           <div class="col-lg-6 mx-auto">
-            <!-- <h2 class="text-primary text-gradient mb-0">Profile WBTB Terbaru</h2> -->
-            <h2 class="">WBTB Terbaru</h2>
+            <!-- <h2 class="text-primary text-gradient mb-0">Profile WBTb Terbaru</h2> -->
+            <h2 class="">WBTb Terbaru</h2>
             <p class="lead">Informasi Warisan Budaya Tak Benda Terbaru di Daerah Istimewa Yogyakarta.</p>
           
         </div>
@@ -461,8 +461,8 @@
             <div class="card-body">
               <div class="content-left text-start my-auto py-4">
                 <a href="javascript:;">
-                  <h2 class="card-title text-white">Lihat WBTB Lainnya</h2>
-                  <p class="card-description text-white">Terdapat lebih dari 79 WBTB yang telah terdaftar di Database. </p>
+                  <h2 class="card-title text-white">Lihat WBTb Lainnya</h2>
+                  <p class="card-description text-white">Terdapat lebih dari 79 WBTb yang telah terdaftar di Database. </p>
                   </a><a href="javascript:;" class="text-white icon-move-right">Lihat Semua
                     <i class="fas fa-arrow-right text-sm" aria-hidden="true"></i>
                   </a>
@@ -665,7 +665,7 @@
             <p class="my-4 text-sm">
               All rights reserved. Copyright © <script>
                 document.write(new Date().getFullYear())
-              </script> WBTB DIY <a href="https://budaya.jogjaprov.go.id/" target="_blank">Dinas Kebudayaan Daerah Istimewa Yogyakarta</a>.
+              </script> WBTb DIY <a href="https://budaya.jogjaprov.go.id/" target="_blank">Dinas Kebudayaan Daerah Istimewa Yogyakarta</a>.
             </p>
           </div>
         </div>

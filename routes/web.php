@@ -33,6 +33,8 @@ use Illuminate\Http\Request;
 */
 
 Route::get('/', [IndexController::class, 'index'])->name('index');
+Route::get('/pencatatan', [IndexController::class, 'pencatatan'])->name('pencatatan');
+
 
 Route::get('/sign-up', SignUp::class)->name('sign-up');
 Route::get('/login', Login::class)->name('login');
