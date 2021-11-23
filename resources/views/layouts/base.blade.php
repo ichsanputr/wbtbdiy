@@ -63,8 +63,8 @@
             })(window,document,'script','dataLayer','GTM-NKDMSK6');
         </script>
     @endif
-    <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
-    <link rel="icon" type="image/png" href="../assets/img/favicon.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('assets/img/logo.png') }}">
+    <link rel="icon" type="image/png" href="{{ asset('assets/img/logo.png') }}">
     <title>
         Warisan Budaya Tak Benda Daerah Istimewa Yogyakarta
     </title>
