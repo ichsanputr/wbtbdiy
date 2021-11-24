@@ -202,8 +202,9 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-7 text-center mx-auto">
-            <h1 class="text-white pt-3 mt-n5">WBTb DIY</h1>
-            <p class="lead text-white mt-3">Database penyimpanan dan profile karya Warisan Budaya Tak Benda Daerah Istimewa Yogyakarta.</p>
+            {{-- <h1 class="text-white pt-3 mt-n5">WBTb DIY</h1> --}}
+            <img src="{{ asset('assets/img/logo.png') }}" class="mb-4" alt="" width='200' height="100">
+            <p class="lead text-white mt-3">Database penyimpanan dan profile karya Warisan Budaya TakBenda Daerah Istimewa Yogyakarta.</p>
           </div>
         </div>
       </div>
@@ -518,15 +519,18 @@
           <h4 class="mb-1">Kontak Kami</h4>
           <p class="mb-0">Ikuti akun resmi media sosial Dinas Kebudayaan DIY</p>
         </div>
-        <div class="col-lg-5 me-lg-auto my-lg-auto text-lg-right mt-5">
+        <div class="col-lg-7 me-lg-auto my-lg-auto text-lg-right mt-5">
           <a href="https://twitter.com/" class="btn btn-info mb-0 me-2" target="_blank">
             <i class="fab fa-twitter me-1"></i> Twitter
           </a>
           <a href="https://www.facebook.com/" class="btn btn-primary mb-0 me-2" target="_blank">
             <i class="fab fa-facebook-square me-1"></i> Facebook
           </a>
-          <a href="https://www.instagram" class="btn btn-dark mb-0 me-2" target="_blank">
+          <a href="https://www.instagram.com" class="btn btn-dark mb-0 me-2" target="_blank">
             <i class="fab fa-instagram me-1"></i> Instagram
+          </a>
+          <a href="https://www.web.whatsapp.com" class="btn btn-success mb-0 me-2" target="_blank">
+            <i class="fab fa-whatsapp me-1"></i> Chat on WA
           </a>
         </div>
       </div>
