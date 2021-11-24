@@ -18,8 +18,8 @@ class CreatePengusulansTable extends Migration
             $table->string("nama_warisan_budaya");
             $table->enum("kondisi", ['berkembang', 'bertahan', 'berkurang', 'terancam', 'punah']);
             $table->string("lokasi");
-            $table->string("deskripsi");
-            $table->json("pelaku");
+            $table->string("deskripsi", 1000);
+            $table->json("pelaku")->nullable();
             $table->string("foto");
             $table->string("video");
             $table->json("domain");

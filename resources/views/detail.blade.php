@@ -29,7 +29,7 @@
       <div class="col-12">
         <nav class="navbar navbar-expand-lg  blur blur-rounded top-0 z-index-fixed shadow position-absolute my-3 py-2 start-0 end-0 mx-4">
           <div class="container-fluid">
-            <a class="navbar-brand font-weight-bolder ms-sm-3" href="{{ url('/') }}" rel="tooltip" title="Designed and Coded oleh Creative Tim" data-placement="bottom" target="_blank">
+            <a class="navbar-brand font-weight-bolder ms-sm-3" href="{{ url('/') }}" rel="tooltip" title="Website WBTb DIY" data-placement="bottom">
               <img src="{{ asset('assets/img/logo.png') }}" alt="" width="54" height="34"/>
             </a>
             <button class="navbar-toggler shadow-none ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
@@ -285,24 +285,25 @@
   
   <!-- END Section Content -->
   <!-- -------   START PRE-FOOTER 2 - simple social line w/ title & 3 buttons    -------- -->
-  <div class="pt-5">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-5 ms-auto">
-          <h4 class="mb-1">Kontak Kami</h4>
-          <p class="mb-0">Ikuti akun resmi media sosial Dinas Kebudayaan DIY</p>
-        </div>
-        <div class="col-lg-5 me-lg-auto my-lg-auto text-lg-right mt-5">
-          <a href="https://twitter.com/" class="btn btn-info mb-0 me-2" target="_blank">
-            <i class="fab fa-twitter me-1"></i> Twitter
-          </a>
-          <a href="https://www.facebook.com/" class="btn btn-primary mb-0 me-2" target="_blank">
-            <i class="fab fa-facebook-square me-1"></i> Facebook
-          </a>
-          <a href="https://www.instagram" class="btn btn-dark mb-0 me-2" target="_blank">
-            <i class="fab fa-instagram me-1"></i> Instagram
-          </a>
-        </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-5 ms-auto">
+        <h4 class="mb-1">Kontak Kami</h4>
+        <p class="mb-0">Ikuti akun resmi media sosial Dinas Kebudayaan DIY</p>
+      </div>
+      <div class="col-lg-7 me-lg-auto my-lg-auto text-lg-right mt-5">
+        <a href="https://twitter.com/" class="btn btn-info mb-0 me-2" target="_blank">
+          <i class="fab fa-twitter me-1"></i> Twitter
+        </a>
+        <a href="https://www.facebook.com/" class="btn btn-primary mb-0 me-2" target="_blank">
+          <i class="fab fa-facebook-square me-1"></i> Facebook
+        </a>
+        <a href="https://www.instagram.com" class="btn btn-dark mb-0 me-2" target="_blank">
+          <i class="fab fa-instagram me-1"></i> Instagram
+        </a>
+        <a href="https://wa.me/6282316078902/?text=Halo%20Admin%20Dinas%20Kebudayaan" class="btn btn-success mb-0 me-2" target="_blank">
+          <i class="fab fa-whatsapp me-1"></i> Chat on WA
+        </a>
       </div>
     </div>
   </div>

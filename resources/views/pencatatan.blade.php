@@ -29,7 +29,7 @@
       <div class="col-12">
         <nav class="navbar navbar-expand-lg  blur blur-rounded top-0 z-index-fixed shadow position-absolute my-3 py-2 start-0 end-0 mx-4">
           <div class="container-fluid">
-            <a class="navbar-brand font-weight-bolder ms-sm-3" href="{{ url('/') }}" rel="tooltip" title="Designed and Coded oleh Creative Tim" data-placement="bottom">
+            <a class="navbar-brand font-weight-bolder ms-sm-3" href="{{ url('/') }}" rel="tooltip" title="Website WBTb DIY" data-placement="bottom">
               <img src="{{ asset('assets/img/logo.png') }}" alt="" width="54" height="34">
             </a>
             <button class="navbar-toggler shadow-none ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
@@ -255,17 +255,17 @@
           <div class="col-lg-6 justify-content-center d-flex flex-column">
             <div class="card">
               <div class="d-block blur-shadow-image">
-                <img src="https://www.kratonjogja.id/upload/images/assets/srimpi-muncar-09-08-2020-001.jpg" alt="img-blur-shadow-blog-2" class="img-fluid border-radius-lg">
+                <img src="https://jbbudaya.jogjabelajar.org/file/artikel/9316814d6cefc775df7e55ef2ace8ec4.jpg" alt="img-blur-shadow-blog-2" class="img-fluid border-radius-lg">
               </div>
-            <div class="colored-shadow" style="background-image: url(&quot;https://www.kratonjogja.id/upload/images/assets/srimpi-muncar-09-08-2020-001.jpg&quot;);"></div></div>
+            <div class="colored-shadow" style="background-image: url(&quot;https://jbbudaya.jogjabelajar.org/file/artikel/9316814d6cefc775df7e55ef2ace8ec4.jpg&quot;);"></div></div>
           </div>
           <div class="col-lg-6 justify-content-center d-flex flex-column pl-lg-5 pt-lg-0 pt-3">
-            <h6 class="category text-primary mt-3">Seni Pertunjukan</h6>
+            <h6 class="category text-primary mt-3">Pakaian Adat</h6>
             <h3 class="card-title">
-              <a href="{{ url('detail') }}" class="text-dark">Tarian Srimpi Muncar</a>
+              <a href="{{ url('detail') }}" class="text-dark">Busana Mataraman Yogyakarta</a>
             </h3>
             <p class="card-description">
-              Srimpi Muncar merupakan tari klasik Keraton Yogyakarta Yasan Dalem (karya) Sri Sultan Hamengku Buwono VI (1855-1877), diciptakan pada 1857, dan disempurnakan pada era Sri Sultan Hamengku Buwono VIII (1921-1939). ‘Muncar’ berarti gemilang atau bersinar.… <a href="{{ url('detail') }}" class="text-darker icon-move-right text-sm">Read More
+              Perkembangan pakaian atau busana adat tradisional di daerah Istimewa Yogyakarta sangat berkaitan dengan berdirinya kasultanan Yogyakarta dengan Sri Sultan Hamengku Buwana I (HB I)sebagai raja waktu itu … <a href="{{ url('detail') }}" class="text-darker icon-move-right text-sm">Read More
                 <i class="fas fa-arrow-right text-xs ms-1" aria-hidden="true"></i>
               </a>
             </p>
@@ -278,17 +278,18 @@
           <div class="col-lg-6 justify-content-center d-flex flex-column">
             <div class="card">
               <div class="d-block blur-shadow-image">
-                <img src="https://images.bisnis-cdn.com/posts/2021/03/22/1370932/sayur-lodeh.jpg" alt="img-blur-shadow-blog-2" class="img-fluid border-radius-lg">
+                <img src="https://img.jakpost.net/c/2018/11/12/2018_11_12_58412_1542005743._large.jpg" alt="img-blur-shadow-blog-2" class="img-fluid border-radius-lg">
               </div>
-            <div class="colored-shadow" style="background-image: url(&quot;https://images.bisnis-cdn.com/posts/2021/03/22/1370932/sayur-lodeh.jpg&quot;);"></div></div>
+            <div class="colored-shadow" style="background-image: url(&quot;https://img.jakpost.net/c/2018/11/12/2018_11_12_58412_1542005743._large.jpg&quot;);"></div></div>
           </div>
           <div class="col-lg-6 justify-content-center d-flex flex-column pl-lg-5 pt-lg-0 pt-3">
-            <h6 class="category text-warning mt-3">Kuliner Tradisional</h6>
+            <h6 class="category text-warning mt-3">Upacara-Ritus</h6>
             <h3 class="card-title">
-              <a href="{{ url('detail') }}" class="text-dark">Sayur Lodeh</a>
+              <a href="{{ url('detail') }}" class="text-dark">Upacara Nguras Enceh</a>
             </h3>
             <p class="card-description">
-              Kisah sayur lodeh ini berawal ketika suatu hari pada 1931 wabah menyerang Yogyakarta, Sultan pun memerintahkan warganya untuk memasak sayur lodeh, dan berdiam diri di rumah selama 49 hari. Lalu wabah berakhir...
+              Menurut sejarahnya, Enceh atau genthong yang digunakan sebagai alat wudhu menjadi simbol bahwa Sultan Agung merupakah sosok yang memeluk Agama Islam secara kuat. 
+Upacara tradisi nguras enceh di Makam raja-raja ...
               <a href="{{ url('detail') }}" class="text-darker icon-move-right text-sm">Read More
                 <i class="fas fa-arrow-right text-xs ms-1" aria-hidden="true"></i>
               </a>
@@ -302,18 +303,17 @@
           <div class="col-lg-6 justify-content-center d-flex flex-column">
             <div class="card">
               <div class="d-block blur-shadow-image">
-                <img src="https://www.kratonjogja.id/upload/images/assets/srimpi-muncar-09-08-2020-001.jpg" alt="img-blur-shadow-blog-2" class="img-fluid border-radius-lg">
+                <img src="https://static.republika.co.id/uploads/images/inpicture_slide/salah-satu-bagian-pertunjukan-wayang-wong-mahabhandana-_141006075333-334.jpg" alt="img-blur-shadow-blog-2" class="img-fluid border-radius-lg">
               </div>
-            <div class="colored-shadow" style="background-image: url(&quot;https://www.kratonjogja.id/upload/images/assets/srimpi-muncar-09-08-2020-001.jpg&quot;);"></div></div>
+            <div class="colored-shadow" style="background-image: url(&quot;https://static.republika.co.id/uploads/images/inpicture_slide/salah-satu-bagian-pertunjukan-wayang-wong-mahabhandana-_141006075333-334.jpg&quot;);"></div></div>
           </div>
           <div class="col-lg-6 justify-content-center d-flex flex-column pl-lg-5 pt-lg-0 pt-3">
             <h6 class="category text-primary mt-3">Seni Pertunjukan</h6>
             <h3 class="card-title">
-              <a href="{{ url('detail') }}" class="text-dark">Tarian Srimpi Muncar</a>
+              <a href="{{ url('detail') }}" class="text-dark">Wayang Wong Thengul</a>
             </h3>
             <p class="card-description">
-              Srimpi Muncar merupakan tari klasik Keraton Yogyakarta Yasan Dalem (karya) Sri Sultan Hamengku Buwono VI (1855-1877), diciptakan pada 1857, dan disempurnakan pada era Sri Sultan Hamengku Buwono VIII (1921-1939). ‘Muncar’ berarti gemilang atau bersinar.… <a href="{{ url('detail') }}" class="text-darker icon-move-right text-sm">Read More
-                <i class="fas fa-arrow-right text-xs ms-1" aria-hidden="true"></i>
+              Dusun Seyegan, Desa Margokaton, Kecamatan Seyegan, Kabupaten Sleman, Daerah Istimewa Yogyakarta muncul pada tahun 1967. Cerita yang dilakonkan ...<a href="{{ url('detail') }}" class="text-darker icon-move-right text-sm">Read More<i class="fas fa-arrow-right text-xs ms-1" aria-hidden="true"></i>
               </a>
             </p>
             <p class="author">
@@ -325,18 +325,17 @@
           <div class="col-lg-6 justify-content-center d-flex flex-column">
             <div class="card">
               <div class="d-block blur-shadow-image">
-                <img src="https://images.bisnis-cdn.com/posts/2021/03/22/1370932/sayur-lodeh.jpg" alt="img-blur-shadow-blog-2" class="img-fluid border-radius-lg">
+                <img src="https://blog.titipku.com/wp-content/uploads/2018/08/kulinerjogja_13_8_2018_14_29_3_219-768x768.jpg" alt="img-blur-shadow-blog-2" class="img-fluid border-radius-lg">
               </div>
-            <div class="colored-shadow" style="background-image: url(&quot;https://images.bisnis-cdn.com/posts/2021/03/22/1370932/sayur-lodeh.jpg&quot;);"></div></div>
+            <div class="colored-shadow" style="background-image: url(&quot;https://blog.titipku.com/wp-content/uploads/2018/08/kulinerjogja_13_8_2018_14_29_3_219-768x768.jpg&quot;);"></div></div>
           </div>
           <div class="col-lg-6 justify-content-center d-flex flex-column pl-lg-5 pt-lg-0 pt-3">
             <h6 class="category text-warning mt-3">Kuliner Tradisional</h6>
             <h3 class="card-title">
-              <a href="{{ url('detail') }}" class="text-dark">Sayur Lodeh</a>
+              <a href="{{ url('detail') }}" class="text-dark">Sate Klathak</a>
             </h3>
             <p class="card-description">
-              Kisah sayur lodeh ini berawal ketika suatu hari pada 1931 wabah menyerang Yogyakarta, Sultan pun memerintahkan warganya untuk memasak sayur lodeh, dan berdiam diri di rumah selama 49 hari. Lalu wabah berakhir...
-              <a href="{{ url('detail') }}" class="text-darker icon-move-right text-sm">Read More
+              Sate Klatak adalah macam makanan khas yang berasal dari Kabupaten Bantul  berbahan dasar daging kambing. Dengan spesifikasi tusuk sate terbuat dari besi jeruji ... <a href="{{ url('detail') }}" class="text-darker icon-move-right text-sm">Read More
                 <i class="fas fa-arrow-right text-xs ms-1" aria-hidden="true"></i>
               </a>
             </p>
@@ -428,15 +427,18 @@
           <h4 class="mb-1">Kontak Kami</h4>
           <p class="mb-0">Ikuti akun resmi media sosial Dinas Kebudayaan DIY</p>
         </div>
-        <div class="col-lg-5 me-lg-auto my-lg-auto text-lg-right mt-5">
+        <div class="col-lg-7 me-lg-auto my-lg-auto text-lg-right mt-5">
           <a href="https://twitter.com/" class="btn btn-info mb-0 me-2" target="_blank">
             <i class="fab fa-twitter me-1"></i> Twitter
           </a>
           <a href="https://www.facebook.com/" class="btn btn-primary mb-0 me-2" target="_blank">
             <i class="fab fa-facebook-square me-1"></i> Facebook
           </a>
-          <a href="https://www.instagram" class="btn btn-dark mb-0 me-2" target="_blank">
+          <a href="https://www.instagram.com" class="btn btn-dark mb-0 me-2" target="_blank">
             <i class="fab fa-instagram me-1"></i> Instagram
+          </a>
+          <a href="https://wa.me/6282316078902/?text=Halo%20Admin%20Dinas%20Kebudayaan" class="btn btn-success mb-0 me-2" target="_blank">
+            <i class="fab fa-whatsapp me-1"></i> Chat on WA
           </a>
         </div>
       </div>

@@ -341,7 +341,7 @@
                 <a href="{{ url('detail') }}">
                   <h2 class="card-title text-white">Lihat WBTb Lainnya</h2>
                   <p class="card-description text-white">Terdapat lebih dari 79 WBTb yang telah terdaftar di Database. </p>
-                  </a><a href="{{ url('detail') }}" class="text-white icon-move-right">Lihat Semua
+                  </a><a href="{{ url('pengusulan') }}" class="text-white icon-move-right">Lihat Semua
                     <i class="fas fa-arrow-right text-sm" aria-hidden="true"></i>
                   </a>
                 
@@ -529,7 +529,7 @@
           <a href="https://www.instagram.com" class="btn btn-dark mb-0 me-2" target="_blank">
             <i class="fab fa-instagram me-1"></i> Instagram
           </a>
-          <a href="https://www.web.whatsapp.com" class="btn btn-success mb-0 me-2" target="_blank">
+          <a href="https://wa.me/6282316078902/?text=Halo%20Admin%20Dinas%20Kebudayaan" class="btn btn-success mb-0 me-2" target="_blank">
             <i class="fab fa-whatsapp me-1"></i> Chat on WA
           </a>
         </div>
