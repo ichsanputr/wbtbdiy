@@ -34,7 +34,7 @@
                                 <div class="form-group">
                                     <label for="user-name" class="form-control-label">{{ __('Judul Warisan Budaya') }}</label>
                                     <div class="@error('user.name')border border-danger rounded-3 @enderror">
-                                        <input wire:model="user.name" class="form-control" type="text" placeholder="Judul"
+                                        <input class="form-control" type="text" placeholder="Judul"
                                             id="user-name">
                                     </div>
                                     @error('user.name') <div class="text-danger">{{ $message }}</div> @enderror
@@ -44,7 +44,7 @@
                                 <div class="form-group">
                                     <label for="user-email" class="form-control-label">{{ __('Lokasi') }}</label>
                                     <div class="@error('user.email')border border-danger rounded-3 @enderror">
-                                        <input wire:model="user.email" class="form-control" type="text"
+                                        <input class="form-control" type="text"
                                             placeholder="Lokasi" id="user-email">
                                     </div>
                                     @error('user.email') <div class="text-danger">{{ $message }}</div> @enderror
@@ -56,7 +56,7 @@
                                 <div class="form-group">
                                     <label for="user.phone" class="form-control-label">{{ __('Pelaku Warisan Budaya') }}</label>
                                     <div class="@error('user.phone')border border-danger rounded-3 @enderror">
-                                        <input wire:model="user.phone" class="form-control" type="text"
+                                        <input class="form-control" type="text"
                                             placeholder="Pelaku Warisan Budaya" id="phone">
                                     </div>
                                     @error('user.phone') <div class="text-danger">{{ $message }}</div> @enderror
@@ -81,8 +81,8 @@
                         <div class="form-group">
                             <label for="about">{{ 'Deskripsi' }}</label>
                             <div class="@error('user.about')border border-danger rounded-3 @enderror">
-                                <textarea wire:model="user.about" class="form-control" id="about" rows="3"
-                                    placeholder="Say something about yourself"></textarea>
+                                <textarea class="form-control" id="about" rows="3"
+                                    placeholder=""></textarea>
                             </div>
                             @error('user.about') <div class="text-danger">{{ $message }}</div> @enderror
                         </div>

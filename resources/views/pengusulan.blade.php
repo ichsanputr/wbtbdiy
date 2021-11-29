@@ -274,6 +274,7 @@
             </p>
           </div>
         </div>
+        @foreach ($pengusulan as $pengusulan)
         <div class="row mt-5">
           <div class="col-lg-6 justify-content-center d-flex flex-column">
             <div class="card">
@@ -283,22 +284,24 @@
             <div class="colored-shadow" style="background-image: url(&quot;https://images.bisnis-cdn.com/posts/2021/03/22/1370932/sayur-lodeh.jpg&quot;);"></div></div>
           </div>
           <div class="col-lg-6 justify-content-center d-flex flex-column pl-lg-5 pt-lg-0 pt-3">
-            <h6 class="category text-warning mt-3">Kuliner Tradisional</h6>
+            <h6 class="category text-warning mt-3">{{$pengusulan->domain}}</h6>
             <h3 class="card-title">
-              <a href="{{ url('detail') }}" class="text-dark">Sayur Lodeh</a>
+              <a href="{{ url('detail') }}" class="text-dark">{{$pengusulan->judul}}</a>
             </h3>
             <p class="card-description">
-              Kisah sayur lodeh ini berawal ketika suatu hari pada 1931 wabah menyerang Yogyakarta, Sultan pun memerintahkan warganya untuk memasak sayur lodeh, dan berdiam diri di rumah selama 49 hari. Lalu wabah berakhir...
+              {!!substr($pengusulan->deskripsi, 0,500)!!}...
               <a href="{{ url('detail') }}" class="text-darker icon-move-right text-sm">Read More
                 <i class="fas fa-arrow-right text-xs ms-1" aria-hidden="true"></i>
               </a>
             </p>
             <p class="author">
-              oleh <a href="{{ url('detail') }}" class="ms-1"><span class="font-weight-bold text-warning"> Sarah Aulina</span></a>, 2 hari yang lalu
+              oleh <a href="{{ url('detail') }}" class="ms-1"><span class="font-weight-bold text-warning"> {{ucwords($pengusulan->user->name)}}</span></a>, 2 hari yang lalu
             </p>
           </div>
         </div>
-        <div class="row mt-5">
+        @endforeach
+        
+        {{-- <div class="row mt-5">
           <div class="col-lg-6 justify-content-center d-flex flex-column">
             <div class="card">
               <div class="d-block blur-shadow-image">
@@ -344,7 +347,7 @@
               oleh <a href="{{ url('detail') }}" class="ms-1"><span class="font-weight-bold text-warning"> Sarah Aulina</span></a>, 2 hari yang lalu
             </p>
           </div>
-        </div>
+        </div> --}}
         {{-- <div class="row">
           <div class="row mt-5">
             <div class="col-lg-4 mb-lg-0 mb-4">

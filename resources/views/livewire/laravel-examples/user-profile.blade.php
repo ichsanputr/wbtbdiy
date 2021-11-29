@@ -7,34 +7,23 @@
                     <h6 class="mb-0">{{ __('Form Pengusulan') }}</h6>
                 </div>
                 <div class="card-body pt-4 p-3">
-
-                    @if ($showDemoNotification)
-                        <div wire:model="showDemoNotification" class="mt-3  alert alert-primary alert-dismissible fade show"
-                            role="alert">
-                            <span class="alert-text text-white">
-                                {{ __('You are in a demo version, you can\'t update the profile.') }}</span>
-                            <button wire:click="$set('showDemoNotification', false)" type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
-                            </button>
-                        </div>
-                    @endif
-
                     @if ($showSuccesNotification)
                         <div wire:model="showSuccesNotification"
                             class="mt-3 alert alert-primary alert-dismissible fade show" role="alert">
                             <span class="alert-icon text-white"><i class="ni ni-like-2"></i></span>
-                            <span class="alert-text text-white">{{ __('Your profile information have been successfuly saved!') }}</span>
+                            <span class="alert-text text-white">{{ __('Berhasil menambahkan pengusulan WBTb.') }}</span>
                             <button wire:click="$set('showSuccesNotification', false)" type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
                             </button>
                         </div>
                     @endif
 
-                    <form wire:submit.prevent="save" action="#" method="POST" role="form text-left">
+                    <form wire:submit.prevent="save" method="POST" role="form text-left">
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="user-name" class="form-control-label">{{ __('Judul Warisan Budaya') }}</label>
                                     <div class="@error('user.name')border border-danger rounded-3 @enderror">
-                                        <input wire:model="user.name" class="form-control" type="text" placeholder="Judul"
+                                        <input class="form-control" type="text" placeholder="Judul"
                                             id="user-name">
                                     </div>
                                     @error('user.name') <div class="text-danger">{{ $message }}</div> @enderror
@@ -44,7 +33,7 @@
                                 <div class="form-group">
                                     <label for="user-email" class="form-control-label">{{ __('Lokasi') }}</label>
                                     <div class="@error('user.email')border border-danger rounded-3 @enderror">
-                                        <input wire:model="user.email" class="form-control" type="text"
+                                        <input class="form-control" type="text"
                                             placeholder="Lokasi" id="user-email">
                                     </div>
                                     @error('user.email') <div class="text-danger">{{ $message }}</div> @enderror
@@ -52,37 +41,73 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="user.phone" class="form-control-label">{{ __('Pelaku Warisan Budaya') }}</label>
-                                    <div class="@error('user.phone')border border-danger rounded-3 @enderror">
-                                        <input wire:model="user.phone" class="form-control" type="text"
-                                            placeholder="Pelaku Warisan Budaya" id="phone">
-                                    </div>
-                                    @error('user.phone') <div class="text-danger">{{ $message }}</div> @enderror
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="user.location" class="form-control-label">{{ __('Kondisi') }}</label>
-                                    <div class="@error('user.location') border border-danger rounded-3 @enderror">
-                                        <select name="kondisi" id="" class="form-control">
-                                            <option value="">Sedang Berkembang</option>
-                                            <option value="">Masih Bertahan</option>
-                                            <option value="">Sudah Berkurang</option>
-                                            <option value="">Terancam Punah</option>
-                                            <option value="">Punah</option>
-                                        </select>
-                                    </div>
-                                    @error('user.location') <div class="text-danger">{{ $message }}</div> @enderror
-                                </div>
-                            </div>
+                          <div class="col-md-6">
+                              <div class="form-group">
+                                  <label for="user.phone" class="form-control-label">{{ __('Pelaku Warisan Budaya') }}</label>
+                                  <div class="@error('user.phone')border border-danger rounded-3 @enderror">
+                                      <input class="form-control" type="text"
+                                          placeholder="Pelaku Warisan Budaya" id="phone">
+                                  </div>
+                                  @error('user.phone') <div class="text-danger">{{ $message }}</div> @enderror
+                              </div>
+                          </div>
+                          <div class="col-md-3">
+                              <div class="form-group">
+                                  <label for="user.location" class="form-control-label">{{ __('Domain Warisan Budaya') }}</label>
+                                  <div class="@error('user.location') border border-danger rounded-3 @enderror">
+                                      <select name="domain" id="" class="form-control">
+                                          <optgroup label="Tradisi dan Ekspresi Lisan">
+                                            <option value="Bahasa Daerah">Bahasa Daerah</option>
+                                            <option value="Naskah Kuno">Naskah Kuno</option>
+                                            <option value="Tradisi Lisan">Tradisi Lisan</option>
+                                            <option value="Permainan Tradisional">Permainan Tradisional</option>
+                                          </optgroup>
+                                          <optgroup label="Seni Pertunjukan">
+                                            <option value="Seni Tradisi">Seni Tradisi</option>
+                                          </optgroup>
+                                          <optgroup label="Adat Istiadat Masyarakat, Ritus, dan Perayaan-Perayaan">
+                                            <option value="Upacara-Ritus">Upacara-Ritus</option>
+                                          </optgroup>
+                                          <optgroup label="Pengetahuan dan Kebiasaan Perilaku Mengenai Alam dan Semesta">
+                                            <option value="Kearifan Lokal">Kearifan Lokal</option>
+                                            <option value="Teknologi Tradisional">Teknologi Tradisional</option>
+                                          </optgroup>
+                                          <optgroup label="Keterampilan dan Kemahiran Kerajinan Tradisional">
+                                            <option value="Arsitektur Tradisional">Arsitektur Tradisional</option>
+                                            <option value="Pakaian Adat">Pakaian Adat</option>
+                                            <option value="Kain Tradisional">Kain Tradisional</option>
+                                            <option value="Kerajinan Tradisional">Kerajinan Tradisional</option>
+                                            <option value="Kuliner Tradisional">Kuliner Tradisional</option>
+                                            <option value="Senjata Tradisional">Senjata Tradisional</option>
+
+                                          </optgroup>
+                                          
+                                      </select>
+                                  </div>
+                                  @error('user.location') <div class="text-danger">{{ $message }}</div> @enderror
+                              </div>
+                          </div>
+                          <div class="col-md-3">
+                              <div class="form-group">
+                                  <label for="user.location" class="form-control-label">{{ __('Kondisi') }}</label>
+                                  <div class="@error('user.location') border border-danger rounded-3 @enderror">
+                                      <select name="kondisi" id="" class="form-control">
+                                          <option value="">Sedang Berkembang</option>
+                                          <option value="">Masih Bertahan</option>
+                                          <option value="">Sudah Berkurang</option>
+                                          <option value="">Terancam Punah</option>
+                                          <option value="">Punah</option>
+                                      </select>
+                                  </div>
+                                  @error('user.location') <div class="text-danger">{{ $message }}</div> @enderror
+                              </div>
+                          </div>
                         </div>
                         <div class="form-group">
                             <label for="about">{{ 'Deskripsi' }}</label>
                             <div class="@error('user.about')border border-danger rounded-3 @enderror">
-                                <textarea wire:model="user.about" class="form-control" id="about" rows="3"
-                                    placeholder="Say something about yourself"></textarea>
+                                <textarea class="form-control" id="summernote" rows="3"
+                                    placeholder=""></textarea>
                             </div>
                             @error('user.about') <div class="text-danger">{{ $message }}</div> @enderror
                         </div>
@@ -194,3 +219,34 @@
       </div>
     </div>
 </div>
+
+@push('style')
+<link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css" rel="stylesheet"/>
+@endpush
+
+@push('js')
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
+<script>
+ $(document).ready(function() {
+        $('#summernote').summernote({
+          placeholder: 'Deskripsi Warisan Budaya',
+          tabsize: 2,
+          height: 200,
+          toolbar: [
+            // [groupName, [list of button]]
+            ['style', ['bold', 'italic', 'underline', 'clear']],
+            ['font', ['strikethrough', 'superscript', 'subscript']],
+            ['fontsize', ['fontsize']],
+            ['color', ['color']],
+            ['para', ['ul', 'ol', 'paragraph']],
+            ['height', ['height']],
+            ['insert', ['picture', 'link', 'video', 'table', 'hr']]
+          ],
+          dialogsInBody: true,
+          dialogsFade: false
+        });
+        $('.dropdown-toggle').dropdown()
+    });
+</script>
+@endpush

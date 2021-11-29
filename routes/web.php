@@ -13,6 +13,7 @@ use App\Http\Livewire\Tables;
 use App\Http\Livewire\StaticSignIn;
 use App\Http\Livewire\StaticSignUp;
 use App\Http\Livewire\Rtl;
+use App\Http\Livewire\Pengusulan;
 
 use App\Http\Livewire\LaravelExamples\UserProfile;
 use App\Http\Livewire\LaravelExamples\UserManagement;
@@ -53,7 +54,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/static-sign-in', StaticSignIn::class)->name('sign-in');
     Route::get('/static-sign-up', StaticSignUp::class)->name('static-sign-up');
     Route::get('/rtl', Rtl::class)->name('rtl');
-    Route::get('/user/pengusulan', UserProfile::class)->name('pengusulan');
+    Route::get('/user/pengusulan', Pengusulan::class)->name('pengusulan');
     Route::get('/user/pencatatan', UserManagement::class)->name('pencatatan');
 });
 

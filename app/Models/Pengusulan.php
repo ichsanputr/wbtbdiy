@@ -11,7 +11,7 @@ class Pengusulan extends Model
     protected $table = "pengusulan";
 
     protected $fillable = [
-        "nama_warisan_budaya",
+        "judul",
         "kondisi",
         "lokasi",
         "deskripsi",
@@ -22,6 +22,9 @@ class Pengusulan extends Model
         "user_id"
     ];
 
-
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
     
 }

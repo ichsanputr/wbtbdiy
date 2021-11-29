@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Pengusulan;
 
 class IndexController extends Controller
 {
@@ -18,7 +19,7 @@ class IndexController extends Controller
 
     public function pengusulan()
     {
-        return view("pengusulan");
+        return view("pengusulan", ['pengusulan' => Pengusulan::all()]);
     }
 
     public function detail()

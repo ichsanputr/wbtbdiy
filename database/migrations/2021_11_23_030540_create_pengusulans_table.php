@@ -15,15 +15,16 @@ class CreatePengusulansTable extends Migration
     {
         Schema::create('pengusulan', function (Blueprint $table) {
             $table->id();
-            $table->string("nama_warisan_budaya");
+            $table->string("judul");
             $table->enum("kondisi", ['berkembang', 'bertahan', 'berkurang', 'terancam', 'punah']);
             $table->string("lokasi");
-            $table->string("deskripsi", 1000);
-            $table->json("pelaku")->nullable();
-            $table->string("foto");
-            $table->string("video");
-            $table->json("domain");
+            $table->mediumText("deskripsi");
+            $table->string("pelaku")->nullable();
+            $table->string("foto")->nullable();
+            $table->string("video")->nullable();
+            $table->string("domain");
             $table->integer("user_id");
+            $table->integer("is_approved", )->default(0);
             $table->timestamps();
         });
     }
