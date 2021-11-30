@@ -43,7 +43,7 @@ class Pengusulan extends Component
             'domain' => $this->domain,
             'kondisi' => $this->kondisi,
             'deskripsi' => $this->deskripsi,
-            'foto' => $this->uploadFoto(),
+            'foto' => json_encode($this->uploadFoto()),
             'user_id' => auth()->user()->id,
         ]);
 
@@ -59,6 +59,11 @@ class Pengusulan extends Component
         $list_images = array();
         foreach($images as $k => $img){
             $data = $img->getAttribute('src');
+            // dd(parse_url($data));
+            if(sizeof(parse_url($data))>2){
+                $data = 'data:image/jpg;base64,'.base64_encode(file_get_contents($data));
+            }
+            // dd($data);
             list($type, $data) = explode(';', $data);
             list(, $data)      = explode(',', $data);
             $data = base64_decode($data);
@@ -75,7 +80,7 @@ class Pengusulan extends Component
 
         $this->deskripsi = $dom->saveHTML();
 
-        return json_encode($list_images);
+        return $list_images;
     }
 
     public function fileExtension($mime_type)

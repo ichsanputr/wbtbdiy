@@ -260,9 +260,9 @@
             <div class="colored-shadow" style="background-image: url(&quot;https://www.kratonjogja.id/upload/images/assets/srimpi-muncar-09-08-2020-001.jpg&quot;);"></div></div>
           </div>
           <div class="col-lg-6 justify-content-center d-flex flex-column pl-lg-5 pt-lg-0 pt-3">
-            <h6 class="category text-primary mt-3">Seni Pertunjukan</h6>
+            <h6 class="category text-primary mt-3">Seni Pertunjukan </h6>
             <h3 class="card-title">
-              <a href="{{ url('detail') }}" class="text-dark">Tarian Srimpi Muncar</a>
+               <a href="{{ url('detail') }}" class="text-dark">Tarian Srimpi Muncar</a> {{-- <i class="far fa-check-circle"></i> --}}
             </h3>
             <p class="card-description">
               Srimpi Muncar merupakan tari klasik Keraton Yogyakarta Yasan Dalem (karya) Sri Sultan Hamengku Buwono VI (1855-1877), diciptakan pada 1857, dan disempurnakan pada era Sri Sultan Hamengku Buwono VIII (1921-1939). ‘Muncar’ berarti gemilang atau bersinar.… <a href="{{ url('detail') }}" class="text-darker icon-move-right text-sm">Read More
@@ -275,13 +275,17 @@
           </div>
         </div>
         @foreach ($pengusulan as $pengusulan)
+              @php
+              // dd(json_decode($pengusulan->foto));
+                  $pengusulan->foto = (0 === sizeof(json_decode($pengusulan->foto)))? array("default.jpg") : json_decode($pengusulan->foto) ;
+              @endphp
         <div class="row mt-5">
           <div class="col-lg-6 justify-content-center d-flex flex-column">
             <div class="card">
               <div class="d-block blur-shadow-image">
-                <img src="https://images.bisnis-cdn.com/posts/2021/03/22/1370932/sayur-lodeh.jpg" alt="img-blur-shadow-blog-2" class="img-fluid border-radius-lg">
+                <img src="{{asset('upload/'.$pengusulan->foto[0])}}" alt="img-blur-shadow-blog-2" class="img-fluid border-radius-lg">
               </div>
-            <div class="colored-shadow" style="background-image: url(&quot;https://images.bisnis-cdn.com/posts/2021/03/22/1370932/sayur-lodeh.jpg&quot;);"></div></div>
+            <div class="colored-shadow" style="background-image: url(&quot; {{asset('upload/'.$pengusulan->foto[0])}} &quot;);"></div></div>
           </div>
           <div class="col-lg-6 justify-content-center d-flex flex-column pl-lg-5 pt-lg-0 pt-3">
             <h6 class="category text-warning mt-3">{{$pengusulan->domain}}</h6>
@@ -289,7 +293,8 @@
               <a href="{{ url('detail') }}" class="text-dark">{{$pengusulan->judul}}</a>
             </h3>
             <p class="card-description">
-              {!!substr($pengusulan->deskripsi, 0,500)!!}...
+              
+              {!!substr(strip_tags($pengusulan->deskripsi, '<p>'),0,200)!!}...
               <a href="{{ url('detail') }}" class="text-darker icon-move-right text-sm">Read More
                 <i class="fas fa-arrow-right text-xs ms-1" aria-hidden="true"></i>
               </a>

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePengusulansTable extends Migration
+class CreatePencatatansTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,18 +13,17 @@ class CreatePengusulansTable extends Migration
      */
     public function up()
     {
-        Schema::create('pengusulan', function (Blueprint $table) {
+        Schema::create('pencatatan', function (Blueprint $table) {
             $table->id();
             $table->string("judul");
             $table->enum("kondisi", ['berkembang', 'bertahan', 'berkurang', 'terancam', 'punah']);
             $table->string("lokasi");
             $table->mediumText("deskripsi");
             $table->string("pelaku")->nullable();
-            $table->json("foto")->nullable();
+            $table->string("foto")->nullable();
             $table->string("video")->nullable();
             $table->string("domain");
             $table->integer("user_id");
-            $table->integer("is_approved", )->default(0);
             $table->timestamps();
         });
     }
@@ -36,6 +35,6 @@ class CreatePengusulansTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pengusulans');
+        Schema::dropIfExists('pencatatans');
     }
 }
