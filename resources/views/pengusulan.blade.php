@@ -294,7 +294,7 @@
             </h3>
             <p class="card-description">
               
-              {!!substr(strip_tags($pengusulan->deskripsi, '<p>'),0,270)!!}... 
+              {!!substr(strip_tags($pengusulan->deskripsi, '<p>'),0,270)!!}... <br/>
               <a href="{{ url('detail') }}" class="text-darker icon-move-right text-sm">Read More
                 <i class="fas fa-arrow-right text-xs ms-1" aria-hidden="true"></i>
               </a>
