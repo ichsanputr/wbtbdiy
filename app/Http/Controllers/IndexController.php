@@ -9,7 +9,7 @@ class IndexController extends Controller
 {
     public function index()
     {
-        return view("index");
+        return view("index", ['pengusulan' => Pengusulan::limit(3)->get()]);
     }
 
     public function pencatatan()
