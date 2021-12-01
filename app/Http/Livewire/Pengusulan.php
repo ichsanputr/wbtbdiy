@@ -22,6 +22,9 @@ class Pengusulan extends Component
     protected $rules = [
         'domain' => 'required',
         'kondisi' => 'required',
+        'judul' => 'required',
+        'lokasi' => 'required',
+        'deskripsi' => 'required',
         // '' => 'email:rfc,dns',
         // '' => 'max:10',
         // '' => 'max:200',

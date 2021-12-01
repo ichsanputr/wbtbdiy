@@ -21,6 +21,7 @@ use App\Http\Livewire\LaravelExamples\UserManagement;
 use App\Http\Controllers\IndexController;
 
 use Illuminate\Http\Request;
+use App\Models\Pengusulan as PengusulanModel;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,7 +37,7 @@ use Illuminate\Http\Request;
 Route::get('/', [IndexController::class, 'index'])->name('index');
 Route::get('/pencatatan', [IndexController::class, 'pencatatan'])->name('depan-pencatatan');
 Route::get('/pengusulan', [IndexController::class, 'pengusulan'])->name('depan-pengusulan');
-Route::get('/detail', [IndexController::class, 'detail'])->name('detail');
+Route::get('/detail/{pengusulan}', [IndexController::class, 'detail'])->name('detail');
 
 
 Route::get('/sign-up', SignUp::class)->name('sign-up');

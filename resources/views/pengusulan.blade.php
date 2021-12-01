@@ -78,17 +78,14 @@
           </div>
         </div>
         @foreach ($pengusulan as $pengusulan)
-              @php
-              // dd(json_decode($pengusulan->foto));
-                  $pengusulan->foto = (0 === sizeof(json_decode($pengusulan->foto)))? array("default.jpg") : json_decode($pengusulan->foto) ;
-              @endphp
+              
         <div class="row mt-5">
           <div class="col-lg-6 justify-content-center d-flex flex-column">
             <div class="card">
               <div class="d-block blur-shadow-image">
-                <img src="{{asset('upload/'.$pengusulan->foto[0])}}" alt="img-blur-shadow-blog-2" class="img-fluid border-radius-lg">
+                <img src="{{asset('upload/'.$pengusulan->foto)}}" alt="img-blur-shadow-blog-2" class="img-fluid border-radius-lg">
               </div>
-            <div class="colored-shadow" style="background-image: url(&quot; {{asset('upload/'.$pengusulan->foto[0])}} &quot;);"></div></div>
+            <div class="colored-shadow" style="background-image: url(&quot; {{asset('upload/'.$pengusulan->foto)}} &quot;);"></div></div>
           </div>
           <div class="col-lg-6 justify-content-center d-flex flex-column pl-lg-5 pt-lg-0 pt-3">
             <h6 class="category text-warning mt-3">{{$pengusulan->domain}}</h6>

@@ -9,7 +9,7 @@ class IndexController extends Controller
 {
     public function index()
     {
-        return view("index", ['pengusulan' => Pengusulan::limit(3)->get()]);
+        return view("index", ['pengusulan' => Pengusulan::limit(3)->orderByDesc("id")->get()]);
     }
 
     public function pencatatan()
@@ -22,8 +22,8 @@ class IndexController extends Controller
         return view("pengusulan", ['pengusulan' => Pengusulan::all()]);
     }
 
-    public function detail()
+    public function detail(Pengusulan $pengusulan)
     {
-        return view("detail");
+        return view("detail", ["pengusulan" => $pengusulan]);
     }
 }

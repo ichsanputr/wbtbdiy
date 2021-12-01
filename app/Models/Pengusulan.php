@@ -23,11 +23,20 @@ class Pengusulan extends Model
         "is_approved"
     ];
 
+    protected $cast = [
+        'foto' => 'array'
+    ];
+
     public function user()
     {
         return $this->belongsTo(User::class);
     }
 
-    
+    public function getFotoAttribute($value)
+    {
+        $value = (0 === sizeof(json_decode($value)))? array("default.jpg") :json_decode($value);
+        
+        return $value[0];
+    }
     
 }

@@ -77,15 +77,11 @@
   <div class="container mt-5">
   <div class="row">
     @foreach ($pengusulan as $pengusulan)
-              @php
-              // dd(json_decode($pengusulan->foto));
-                  $pengusulan->foto = (0 === sizeof(json_decode($pengusulan->foto)))? array("default.jpg") : json_decode($pengusulan->foto) ;
-              @endphp
       <div class="col-lg-3 col-sm-6">
         <div class="card card-plain card-blog">
           <div class="card-image border-radius-lg position-relative">
             <a href="{{ url('detail/'.$pengusulan->id) }}">
-              <img class="w-100 border-radius-lg move-on-hover shadow" src="{{asset('upload/'.$pengusulan->foto[0])}}">
+              <img class="w-100 border-radius-lg move-on-hover shadow" src="{{asset('upload/'.$pengusulan->foto)}}">
             </a>
           </div>
           <div class="card-body px-0">
