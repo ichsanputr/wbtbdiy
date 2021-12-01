@@ -65,15 +65,15 @@
           <div class="col-lg-6 justify-content-center d-flex flex-column pl-lg-5 pt-lg-0 pt-3">
             <h6 class="category text-primary mt-3">Seni Pertunjukan </h6>
             <h3 class="card-title">
-               <a href="{{ url('detail') }}" class="text-dark">Tarian Srimpi Muncar</a> {{-- <i class="far fa-check-circle"></i> --}}
+               <a href="" class="text-dark">Tarian Srimpi Muncar</a> {{-- <i class="far fa-check-circle"></i> --}}
             </h3>
             <p class="card-description">
-              Srimpi Muncar merupakan tari klasik Keraton Yogyakarta Yasan Dalem (karya) Sri Sultan Hamengku Buwono VI (1855-1877), diciptakan pada 1857, dan disempurnakan pada era Sri Sultan Hamengku Buwono VIII (1921-1939). ‘Muncar’ berarti gemilang atau bersinar.… <a href="{{ url('detail') }}" class="text-darker icon-move-right text-sm">Read More
+              Srimpi Muncar merupakan tari klasik Keraton Yogyakarta Yasan Dalem (karya) Sri Sultan Hamengku Buwono VI (1855-1877), diciptakan pada 1857, dan disempurnakan pada era Sri Sultan Hamengku Buwono VIII (1921-1939). ‘Muncar’ berarti gemilang atau bersinar.… <a href="" class="text-darker icon-move-right text-sm">Read More
                 <i class="fas fa-arrow-right text-xs ms-1" aria-hidden="true"></i>
               </a>
             </p>
             <p class="author">
-              oleh <a href="{{ url('detail') }}" class="ms-1"><span class="font-weight-bold text-primary"> Sarah Aulina</span></a>, 2 hari yang lalu
+              oleh <a href="" class="ms-1"><span class="font-weight-bold text-primary"> Sarah Aulina</span></a>, 2 hari yang lalu
             </p>
           </div>
         </div>
@@ -90,17 +90,17 @@
           <div class="col-lg-6 justify-content-center d-flex flex-column pl-lg-5 pt-lg-0 pt-3">
             <h6 class="category text-warning mt-3">{{$pengusulan->domain}}</h6>
             <h3 class="card-title">
-              <a href="{{ url('detail') }}" class="text-dark">{{$pengusulan->judul}}</a>
+              <a href="{{ url('detail/'.$pengusulan->id) }}" class="text-dark">{{$pengusulan->judul}}</a>
             </h3>
             <p class="card-description">
               
               {!!substr(strip_tags($pengusulan->deskripsi, '<p>'),0,270)!!}... <br/>
-              <a href="{{ url('detail') }}" class="text-darker icon-move-right text-sm">Read More
+              <a href="{{ url('detail/'.$pengusulan->id) }}" class="text-darker icon-move-right text-sm">Read More
                 <i class="fas fa-arrow-right text-xs ms-1" aria-hidden="true"></i>
               </a>
             </p>
             <p class="author">
-              oleh <a href="{{ url('detail') }}" class="ms-1"><span class="font-weight-bold text-warning"> {{ucwords($pengusulan->user->name)}}</span></a>, 2 hari yang lalu
+              oleh <a href="" class="ms-1"><span class="font-weight-bold text-warning"> {{ucwords($pengusulan->user->name)}}</span></a>, 2 hari yang lalu
             </p>
           </div>
         </div>
