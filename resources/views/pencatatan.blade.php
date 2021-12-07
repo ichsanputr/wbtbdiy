@@ -51,24 +51,53 @@
     </div>
   </section>
   
-  <div class="container mt-7">
+  <div class="container mt-2">
     <div class="row">
       <div class="col-lg-12">
-        <div class="row">
+        
+        @foreach ($pencatatan as $pencatatan)
+        <div class="row mt-5">
           <div class="col-lg-6 justify-content-center d-flex flex-column">
             <div class="card">
               <div class="d-block blur-shadow-image">
-                <img src="https://jbbudaya.jogjabelajar.org/file/artikel/9316814d6cefc775df7e55ef2ace8ec4.jpg" alt="img-blur-shadow-blog-2" class="img-fluid border-radius-lg">
+                <img src="{{asset('upload/'.$pencatatan->foto)}}" alt="img-blur-shadow-blog-2" class="img-fluid border-radius-lg">
               </div>
-            <div class="colored-shadow" style="background-image: url(&quot;https://jbbudaya.jogjabelajar.org/file/artikel/9316814d6cefc775df7e55ef2ace8ec4.jpg&quot;);"></div></div>
+            <div class="colored-shadow" style="background-image: url(&quot; {{asset('upload/'.$pencatatan->foto)}} &quot;);"></div></div>
           </div>
           <div class="col-lg-6 justify-content-center d-flex flex-column pl-lg-5 pt-lg-0 pt-3">
-            <h6 class="category text-primary mt-3">Pakaian Adat</h6>
+            <h6 class="category text-warning mt-3">{{$pencatatan->domain}}</h6>
             <h3 class="card-title">
-              <a href="{{ url('detail') }}" class="text-dark">Busana Mataraman Yogyakarta</a>
+              <a href="{{ url('pencatatan/'.$pencatatan->id) }}" class="text-dark">{{$pencatatan->judul}}</a>
             </h3>
             <p class="card-description">
-              Perkembangan pakaian atau busana adat tradisional di daerah Istimewa Yogyakarta sangat berkaitan dengan berdirinya kasultanan Yogyakarta dengan Sri Sultan Hamengku Buwana I (HB I)sebagai raja waktu itu … <a href="{{ url('detail') }}" class="text-darker icon-move-right text-sm">Read More
+              
+              {!!substr(strip_tags($pencatatan->deskripsi, '<p>'),0,270)!!}... <br/>
+              <a href="{{ url('pencatatan/'.$pencatatan->id) }}" class="text-darker icon-move-right text-sm">Read More
+                <i class="fas fa-arrow-right text-xs ms-1" aria-hidden="true"></i>
+              </a>
+            </p>
+            <p class="author">
+              oleh <a href="" class="ms-1"><span class="font-weight-bold text-warning"> {{ucwords($pencatatan->user->name)}}</span></a>, 2 hari yang lalu
+            </p>
+          </div>
+        </div>
+        @endforeach
+        
+        {{-- <div class="row mt-5">
+          <div class="col-lg-6 justify-content-center d-flex flex-column">
+            <div class="card">
+              <div class="d-block blur-shadow-image">
+                <img src="https://www.kratonjogja.id/upload/images/peristiwa/img_pASrXFV.jpg" alt="img-blur-shadow-blog-2" class="img-fluid border-radius-lg">
+              </div>
+            <div class="colored-shadow" style="background-image: url(&quot;https://www.kratonjogja.id/upload/images/peristiwa/img_pASrXFV.jpg&quot;);"></div></div>
+          </div>
+          <div class="col-lg-6 justify-content-center d-flex flex-column pl-lg-5 pt-lg-0 pt-3">
+            <h6 class="category text-primary mt-3">Upacara-Ritus</h6>
+            <h3 class="card-title">
+              <a href="{{ url('detail') }}" class="text-dark">Peksi Burak</a>
+            </h3>
+            <p class="card-description">
+              Upacara Adat Peksi Buroq telah ada sejak berdirinya Kraton Ngayogyakarta. Upacara adat peksi burak di lingkungan Kraton Yogyakarta merupakan upacara adat bernuansa religi islam karena berkaitan dengan … <a href="{{ url('detail') }}" class="text-darker icon-move-right text-sm">Read More
                 <i class="fas fa-arrow-right text-xs ms-1" aria-hidden="true"></i>
               </a>
             </p>
@@ -81,18 +110,17 @@
           <div class="col-lg-6 justify-content-center d-flex flex-column">
             <div class="card">
               <div class="d-block blur-shadow-image">
-                <img src="https://img.jakpost.net/c/2018/11/12/2018_11_12_58412_1542005743._large.jpg" alt="img-blur-shadow-blog-2" class="img-fluid border-radius-lg">
+                <img src="https://upload.wikimedia.org/wikipedia/id/d/dc/Surjan_1.jpg" alt="img-blur-shadow-blog-2" class="img-fluid border-radius-lg">
               </div>
-            <div class="colored-shadow" style="background-image: url(&quot;https://img.jakpost.net/c/2018/11/12/2018_11_12_58412_1542005743._large.jpg&quot;);"></div></div>
+            <div class="colored-shadow" style="background-image: url(&quot;https://upload.wikimedia.org/wikipedia/id/d/dc/Surjan_1.jpg&quot;);"></div></div>
           </div>
           <div class="col-lg-6 justify-content-center d-flex flex-column pl-lg-5 pt-lg-0 pt-3">
-            <h6 class="category text-warning mt-3">Upacara-Ritus</h6>
+            <h6 class="category text-warning mt-3">Teknologi Tradisional</h6>
             <h3 class="card-title">
-              <a href="{{ url('detail') }}" class="text-dark">Upacara Nguras Enceh</a>
+              <a href="{{ url('detail') }}" class="text-dark">Sawah Surjan</a>
             </h3>
             <p class="card-description">
-              Menurut sejarahnya, Enceh atau genthong yang digunakan sebagai alat wudhu menjadi simbol bahwa Sultan Agung merupakah sosok yang memeluk Agama Islam secara kuat. 
-Upacara tradisi nguras enceh di Makam raja-raja ...
+              Sawah surjan muncul sebagai respon petani Kulon Progo bagian selatan terhadap kondisi ekologi dan ekonomi. Petani daerah ini menggambarkan tanah mereka sebagai tanah yang banyak mengandung pasir dan lapisannya tipis. Sifat tanah seperti itu menyebabkan pada musim kemarau tanah sering kering. Air yang jatuh ke permukaan tanah baik dari air hujan maupun sumur sawah ...
               <a href="{{ url('detail') }}" class="text-darker icon-move-right text-sm">Read More
                 <i class="fas fa-arrow-right text-xs ms-1" aria-hidden="true"></i>
               </a>
@@ -101,52 +129,7 @@ Upacara tradisi nguras enceh di Makam raja-raja ...
               oleh <a href="{{ url('detail') }}" class="ms-1"><span class="font-weight-bold text-warning"> Sarah Aulina</span></a>, 2 hari yang lalu
             </p>
           </div>
-        </div>
-        <div class="row mt-5">
-          <div class="col-lg-6 justify-content-center d-flex flex-column">
-            <div class="card">
-              <div class="d-block blur-shadow-image">
-                <img src="https://static.republika.co.id/uploads/images/inpicture_slide/salah-satu-bagian-pertunjukan-wayang-wong-mahabhandana-_141006075333-334.jpg" alt="img-blur-shadow-blog-2" class="img-fluid border-radius-lg">
-              </div>
-            <div class="colored-shadow" style="background-image: url(&quot;https://static.republika.co.id/uploads/images/inpicture_slide/salah-satu-bagian-pertunjukan-wayang-wong-mahabhandana-_141006075333-334.jpg&quot;);"></div></div>
-          </div>
-          <div class="col-lg-6 justify-content-center d-flex flex-column pl-lg-5 pt-lg-0 pt-3">
-            <h6 class="category text-primary mt-3">Seni Pertunjukan</h6>
-            <h3 class="card-title">
-              <a href="{{ url('detail') }}" class="text-dark">Wayang Wong Thengul</a>
-            </h3>
-            <p class="card-description">
-              Dusun Seyegan, Desa Margokaton, Kecamatan Seyegan, Kabupaten Sleman, Daerah Istimewa Yogyakarta muncul pada tahun 1967. Cerita yang dilakonkan ...<a href="{{ url('detail') }}" class="text-darker icon-move-right text-sm">Read More<i class="fas fa-arrow-right text-xs ms-1" aria-hidden="true"></i>
-              </a>
-            </p>
-            <p class="author">
-              oleh <a href="{{ url('detail') }}" class="ms-1"><span class="font-weight-bold text-primary"> Sarah Aulina</span></a>, 2 hari yang lalu
-            </p>
-          </div>
-        </div>
-        <div class="row mt-5">
-          <div class="col-lg-6 justify-content-center d-flex flex-column">
-            <div class="card">
-              <div class="d-block blur-shadow-image">
-                <img src="https://blog.titipku.com/wp-content/uploads/2018/08/kulinerjogja_13_8_2018_14_29_3_219-768x768.jpg" alt="img-blur-shadow-blog-2" class="img-fluid border-radius-lg">
-              </div>
-            <div class="colored-shadow" style="background-image: url(&quot;https://blog.titipku.com/wp-content/uploads/2018/08/kulinerjogja_13_8_2018_14_29_3_219-768x768.jpg&quot;);"></div></div>
-          </div>
-          <div class="col-lg-6 justify-content-center d-flex flex-column pl-lg-5 pt-lg-0 pt-3">
-            <h6 class="category text-warning mt-3">Kuliner Tradisional</h6>
-            <h3 class="card-title">
-              <a href="{{ url('detail') }}" class="text-dark">Sate Klathak</a>
-            </h3>
-            <p class="card-description">
-              Sate Klatak adalah macam makanan khas yang berasal dari Kabupaten Bantul  berbahan dasar daging kambing. Dengan spesifikasi tusuk sate terbuat dari besi jeruji ... <a href="{{ url('detail') }}" class="text-darker icon-move-right text-sm">Read More
-                <i class="fas fa-arrow-right text-xs ms-1" aria-hidden="true"></i>
-              </a>
-            </p>
-            <p class="author">
-              oleh <a href="{{ url('detail') }}" class="ms-1"><span class="font-weight-bold text-warning"> Sarah Aulina</span></a>, 2 hari yang lalu
-            </p>
-          </div>
-        </div>
+        </div> --}}
         {{-- <div class="row">
           <div class="row mt-5">
             <div class="col-lg-4 mb-lg-0 mb-4">
@@ -220,4 +203,7 @@ Upacara tradisi nguras enceh di Makam raja-raja ...
       </div>
     </div>
   </div>
- @endsection
+  
+  <!-- END Section Content -->
+  <!-- -------   START PRE-FOOTER 2 - simple social line w/ title & 3 buttons    -------- -->
+  @endsection

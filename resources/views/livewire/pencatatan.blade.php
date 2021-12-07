@@ -119,7 +119,7 @@
             </div>
             <div class="card my-4">
                 <div class="card-header pb-0 px-3">
-                    <h6 class="mb-0">{{ __('Daftar Pengusulan') }}</h6>
+                    <h6 class="mb-0">{{ __('Daftar Pencatatan') }}</h6>
                 </div>
                 <div class="card-body px-0 pb-2">
                     <div class="table-responsive">
@@ -133,25 +133,25 @@
                           </tr>
                         </thead>
                         <tbody>
-                          @foreach ($pengusulan as $pengusulan)
+                          @foreach ($pencatatan as $pencatatan)
                           <tr>
                             <td>
                               <div class="d-flex px-2 py-1">
                                 
                                 <div class="d-flex flex-column justify-content-center">
-                                  <h6 class="mb-0 text-sm">{{$pengusulan->judul}}</h6>
+                                  <h6 class="mb-0 text-sm">{{$pencatatan->judul}}</h6>
                                 </div>
                               </div>
                             </td>
                             
                             <td class="align-middle text-center text-sm">
-                              <span class="text-xs font-weight-bold"> {{ $pengusulan->lokasi }} </span>
+                              <span class="text-xs font-weight-bold"> {{ $pencatatan->lokasi }} </span>
                             </td>
                             <td class="align-middle">
                               <div class="progress-wrapper w-75 mx-auto">
                                 <div class="progress-info">
                                   <div class="progress-percentage">
-                                    <span class="text-xs font-weight-bold">{{ $pengusulan->kondisi }}</span>
+                                    <span class="text-xs font-weight-bold">{{ $pencatatan->kondisi }}</span>
                                   </div>
                                 </div>
                                 {{-- <div class="progress">

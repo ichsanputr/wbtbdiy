@@ -14,6 +14,8 @@ use App\Http\Livewire\StaticSignIn;
 use App\Http\Livewire\StaticSignUp;
 use App\Http\Livewire\Rtl;
 use App\Http\Livewire\Pengusulan;
+use App\Http\Livewire\Pencatatan;
+
 
 use App\Http\Livewire\LaravelExamples\UserProfile;
 use App\Http\Livewire\LaravelExamples\UserManagement;
@@ -37,7 +39,8 @@ use App\Models\Pengusulan as PengusulanModel;
 Route::get('/', [IndexController::class, 'index'])->name('index');
 Route::get('/pencatatan', [IndexController::class, 'pencatatan'])->name('depan-pencatatan');
 Route::get('/pengusulan', [IndexController::class, 'pengusulan'])->name('depan-pengusulan');
-Route::get('/detail/{pengusulan}', [IndexController::class, 'detail'])->name('detail');
+Route::get('/pengusulan/{pengusulan}', [IndexController::class, 'detailPengusulan'])->name('detail-pengusulan');
+Route::get('/pencatatan/{pencatatan}', [IndexController::class, 'detailPencatatan'])->name('detail-pencatatan');
 
 
 Route::get('/sign-up', SignUp::class)->name('sign-up');
@@ -56,6 +59,6 @@ Route::middleware('auth')->group(function () {
     Route::get('/static-sign-up', StaticSignUp::class)->name('static-sign-up');
     Route::get('/rtl', Rtl::class)->name('rtl');
     Route::get('/user/pengusulan', Pengusulan::class)->name('pengusulan');
-    Route::get('/user/pencatatan', UserManagement::class)->name('pencatatan');
+    Route::get('/user/pencatatan', Pencatatan::class)->name('pencatatan');
 });
 

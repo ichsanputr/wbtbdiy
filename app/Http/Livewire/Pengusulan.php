@@ -25,10 +25,6 @@ class Pengusulan extends Component
         'judul' => 'required',
         'lokasi' => 'required',
         'deskripsi' => 'required',
-        // '' => 'email:rfc,dns',
-        // '' => 'max:10',
-        // '' => 'max:200',
-        // '' => 'min:3'
     ];
 
     public function mount() { 
