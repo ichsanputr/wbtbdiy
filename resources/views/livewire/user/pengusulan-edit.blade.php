@@ -112,7 +112,7 @@
                             @error('deskripsi') <div class="text-danger">{{ $message }}</div> @enderror
                         </div>
                         <div class="d-flex justify-content-end">
-                            
+
                             <button type="submit" class="btn bg-gradient-dark btn-md mt-4 mb-4">{{ 'Simpan' }}</button>
                         </div>
                     </form>
@@ -148,7 +148,11 @@
             ],
             dialogsInBody: true,
             dialogsFade: false,
-            
+            callbacks: {
+                onChange: function(contents, $editable) {
+                            @this.set('deskripsi', contents);
+                }
+            }
         });
         $('.dropdown-toggle').dropdown();
 
