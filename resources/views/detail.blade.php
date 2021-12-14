@@ -29,9 +29,9 @@
         <div class="col-lg-10 ms-auto me-auto">
           <h6 class="opacity-7 text-uppercase font-weight-bolder text-sm">Detail</h6>
           <h3 class="title mb-4">{{$warisan_budaya->judul}}</h3>
-          <p class="text-dark" style="text-align:justify">
+          <span class="text-dark" style="text-align:justify">
             {!! $warisan_budaya->deskripsi !!}
-          </p>
+          </span>
         </div>
       </div>
       {{-- <section class="py-7 position-relative">
