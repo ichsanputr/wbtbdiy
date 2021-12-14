@@ -35,16 +35,16 @@
         <div class="row">
           <div class="col-md-4 position-relative">
             <div class="p-3 text-center">
-              <h1 class="text-gradient text-primary"><span id="state1" countTo="{{$jumlah_pengusulan}}">0</span>+</h1>
-              <h5 class="mt-3">Pengusulan</h5>
+              <h1 class="text-gradient text-primary"><span id="state1" countTo="{{$jumlah_warisan_budaya}}">0</span>+</h1>
+              <h5 class="mt-3">Warisan Budaya</h5>
               <p class="text-sm"></p>
             </div>
             <hr class="vertical dark">
           </div>
           <div class="col-md-4 position-relative">
             <div class="p-3 text-center">
-              <h1 class="text-gradient text-primary"> <span id="state2" countTo="{{$jumlah_pencatatan}}">0</span>+</h1>
-              <h5 class="mt-3">Pencatatan</h5>
+              <h1 class="text-gradient text-primary"> <span id="state2" countTo="{{$jumlah_pengusulan}}">0</span>+</h1>
+              <h5 class="mt-3">Pengusulan</h5>
               <p class="text-sm"></p>
             </div>
             <hr class="vertical dark">
@@ -76,20 +76,20 @@
   </div>
   <div class="container mt-5">
   <div class="row">
-    @foreach ($pengusulan as $pengusulan)
+    @foreach ($warisan_budaya as $warisan_budaya)
       <div class="col-lg-3 col-sm-6">
         <div class="card card-plain card-blog">
           <div class="card-image border-radius-lg position-relative">
-            <a href="{{ url('pengusulan/'.$pengusulan->id) }}">
-              <img class="w-100 border-radius-lg move-on-hover shadow" src="{{asset('upload/'.$pengusulan->foto)}}">
+            <a href="{{ url('wbtb/'.$warisan_budaya->id) }}">
+              <img class="w-100 border-radius-lg move-on-hover shadow" src="{{asset('upload/'.$warisan_budaya->foto[0])}}">
             </a>
           </div>
           <div class="card-body px-0">
             <h5>
-              <a href="{{ url('pengusulan/'.$pengusulan->id) }}" class="text-dark font-weight-bold">{{$pengusulan->judul}}</a>
+              <a href="{{ url('wbtb/'.$warisan_budaya->id) }}" class="text-dark font-weight-bold">{{$warisan_budaya->judul}}</a>
             </h5>
-            {!!substr(strip_tags($pengusulan->deskripsi, '<p>'),0,270)!!}... <br/>
-            <a href="{{ url('pengusulan/'.$pengusulan->id) }}" class="text-info icon-move-right">Lebih Lanjut
+            {!!substr(strip_tags($warisan_budaya->deskripsi, '<p>'),0,270)!!}... <br/>
+            <a href="{{ url('wbtb/'.$warisan_budaya->id) }}" class="text-info icon-move-right">Lebih Lanjut
               <i class="fas fa-arrow-right text-sm" aria-hidden="true"></i>
             </a>
           </div>
@@ -102,10 +102,10 @@
           <div class="full-background" style="background-image: url('https://www.kratonjogja.id/upload/images/peristiwa/img_bdiMBM3.jpg')"></div>
           <div class="card-body">
             <div class="content-left text-start my-auto py-4">
-              <a href="{{ url('pengusulan') }}">
+              <a href="{{ url('wbtb') }}">
                 <h2 class="card-title text-white">Lihat WBTb Lainnya</h2>
-                <p class="card-description text-white">Terdapat lebih dari 79 WBTb yang telah terdaftar di Database. </p>
-                </a><a href="{{ url('pengusulan') }}" class="text-white icon-move-right">Lihat Semua
+                <p class="card-description text-white">Terdapat lebih dari {{$jumlah_warisan_budaya}} WBTb yang telah terdaftar di Database. </p>
+                </a><a href="{{ url('wbtb') }}" class="text-white icon-move-right">Lihat Semua
                   <i class="fas fa-arrow-right text-sm" aria-hidden="true"></i>
                 </a>
               

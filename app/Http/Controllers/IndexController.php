@@ -3,41 +3,35 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Pengusulan;
-use App\Models\Pencatatan;
+use App\Models\WarisanBudaya;
 use App\Models\User;
-
-
 
 class IndexController extends Controller
 {
     public function index()
     {
         return view("index", [
-            'pengusulan' => Pengusulan::limit(3)->orderByDesc("id")->get(),
-            'jumlah_pengusulan' => Pengusulan::count(),
-            'jumlah_pencatatan' => Pencatatan::count(),
+            'warisan_budaya' => WarisanBudaya::whereIsApproved(1)->limit(3)->orderByDesc("id")->get(),
+            'jumlah_warisan_budaya' => WarisanBudaya::whereIsApproved(1)->count(),
+            'jumlah_pengusulan' => WarisanBudaya::whereIsApproved(0)->count(),
             'jumlah_user' => User::count()
         ]);
     }
 
     public function pencatatan()
     {
-        return view("pencatatan", ['pencatatan' => Pencatatan::all()]);
+        return view("pencatatan", ['pencatatan' => WarisanBudaya::all()]);
     }
 
-    public function pengusulan()
+    public function wbtb()
     {
-        return view("pengusulan", ['pengusulan' => Pengusulan::all()]);
+        return view("wbtb", ['warisan_budaya' => WarisanBudaya::whereIsApproved(1)->get()]);
     }
 
-    public function detailPengusulan(Pengusulan $pengusulan)
+    public function detail(WarisanBudaya $wbtb)
     {
-        return view("detail-pengusulan", ["pengusulan" => $pengusulan]);
+        // dd($warisan_budaya->judul);
+        return view("detail", ["warisan_budaya" => $wbtb]);
     }
 
-    public function detailPencatatan(Pencatatan $pencatatan)
-    {
-        return view("detail-pencatatan", ["pencatatan" => $pencatatan]);
-    }
 }

@@ -41,15 +41,11 @@
               </span>
             </button>
             <div class="collapse navbar-collapse pt-3 pb-2 py-lg-0 w-100" id="navigation">
-              <ul class="navbar-nav navbar-nav-hover ms-lg-8 ps-lg-5 w-100">
+              <ul class="navbar-nav navbar-nav-hover ms-lg-10 ps-lg-5 w-100">
+                
                 <li class="nav-item dropdown dropdown-hover mx-2">
-                  <a class="nav-link ps-2 d-flex justify-content-between cursor-pointer align-items-center" id="dropdownMenuPages" href="{{ url('pencatatan') }}" aria-expanded="false">
-                    Pencatatan
-                  </a>
-                </li>
-                <li class="nav-item dropdown dropdown-hover mx-2">
-                  <a class="nav-link ps-2 d-flex justify-content-between cursor-pointer align-items-center" id="dropdownMenuBlocks" href="{{ url('pengusulan') }}" aria-expanded="false">
-                    Pengusulan
+                  <a class="nav-link ps-2 d-flex justify-content-between cursor-pointer align-items-center" id="dropdownMenuBlocks" href="{{ url('wbtb') }}" aria-expanded="false">
+                    Warisan Budaya
                   </a>
                   
                 </li>
@@ -192,7 +188,7 @@
                   <a href="{{ url('/login') }}" class="btn btn-sm  bg-gradient-primary btn-round mb-0 me-1 mt-2 mt-md-0">Login</a>                      
                   @endguest
                   @auth
-                      <a href="{{ url('/dashboard') }}" class="btn btn-sm bg-gradient-success btn-round mb-0 me-1 mt-2 mt-md-0 icon-move-right">Dashboard <i class="fas fa-arrow-right text-sm" aria-hidden="true"></i></a>
+                      <a href="{{ url('/login') }}" class="btn btn-sm bg-gradient-success btn-round mb-0 me-1 mt-2 mt-md-0 icon-move-right">Dashboard <i class="fas fa-arrow-right text-sm" aria-hidden="true"></i></a>
                   @endauth
                 </li>
               </ul>

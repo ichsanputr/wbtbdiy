@@ -1,10 +1,9 @@
 <div>
-
     <div class="container-fluid py-4">
         <div class="row">
             <div class="card">
                 <div class="card-header pb-0 px-3">
-                    <h6 class="mb-0">{{ __('Form Pencatatan') }}</h6>
+                    <h6 class="mb-0">{{ __('Form Pengusulan') }}</h6>
                 </div>
                 <div class="card-body pt-4 p-3">
                     @if (session()->has('message'))
@@ -15,6 +14,8 @@
                     @endif
 
                     <form wire:submit.prevent="save" method="POST" role="form text-left">
+                        <input type="hidden" wire:model='selected_id'>
+                        <input type="hidden" wire:model='foto'>
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
@@ -42,7 +43,7 @@
                               <div class="form-group">
                                   <label for="pelaku" class="form-control-label">{{ __('Pelaku Warisan Budaya') }}</label>
                                   <div class="@error('pelaku')border border-danger rounded-3 @enderror">
-                                      <input wiremodel='pelaku' class="form-control" type="text"
+                                      <input wire:model='pelaku' class="form-control" type="text"
                                           placeholder="Pelaku Warisan Budaya" id="pelaku">
                                   </div>
                                   @error('pelaku') <div class="text-danger">{{ $message }}</div> @enderror
@@ -111,60 +112,12 @@
                             @error('deskripsi') <div class="text-danger">{{ $message }}</div> @enderror
                         </div>
                         <div class="d-flex justify-content-end">
+                            
                             <button type="submit" class="btn bg-gradient-dark btn-md mt-4 mb-4">{{ 'Simpan' }}</button>
                         </div>
                     </form>
 
                 </div>
-            </div>
-            <div class="card my-4">
-                <div class="card-header pb-0 px-3">
-                    <h6 class="mb-0">{{ __('Daftar Pencatatan') }}</h6>
-                </div>
-                <div class="card-body px-0 pb-2">
-                    <div class="table-responsive">
-                      <table class="table align-items-center mb-0">
-                        <thead>
-                          <tr>
-                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Judul</th>
-                            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Lokasi</th>
-                            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Kondisi</th>
-                            <th></th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          @foreach ($pencatatan as $pencatatan)
-                          <tr>
-                            <td>
-                              <div class="d-flex px-2 py-1">
-                                
-                                <div class="d-flex flex-column justify-content-center">
-                                  <h6 class="mb-0 text-sm">{{$pencatatan->judul}}</h6>
-                                </div>
-                              </div>
-                            </td>
-                            
-                            <td class="align-middle text-center text-sm">
-                              <span class="text-xs font-weight-bold"> {{ $pencatatan->lokasi }} </span>
-                            </td>
-                            <td class="align-middle">
-                              <div class="progress-wrapper w-75 mx-auto">
-                                <div class="progress-info">
-                                  <div class="progress-percentage">
-                                    <span class="text-xs font-weight-bold">{{ $pencatatan->kondisi }}</span>
-                                  </div>
-                                </div>
-                                {{-- <div class="progress">
-                                  <div class="progress-bar bg-gradient-info w-60" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div> --}}
-                              </div>
-                            </td>
-                          </tr>
-                          @endforeach
-                        </tbody>
-                      </table>
-                    </div>
-                  </div>
             </div>
       </div>
     </div>
@@ -182,7 +135,7 @@
         $('#deskripsi').summernote({
             placeholder: 'Deskripsi Warisan Budaya',
             tabsize: 2,
-            height: 200,
+            height: 350,
             toolbar: [
                 // [groupName, [list of button]]
                 ['style', ['bold', 'italic', 'underline', 'clear']],
@@ -195,11 +148,7 @@
             ],
             dialogsInBody: true,
             dialogsFade: false,
-            callbacks: {
-                onChange: function(contents, $editable) {
-                            @this.set('deskripsi', contents);
-                }
-            }
+            
         });
         $('.dropdown-toggle').dropdown();
 

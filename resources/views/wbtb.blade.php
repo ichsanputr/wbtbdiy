@@ -5,8 +5,8 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-7 text-center mx-auto">
-            <h1 class="text-white pt-3 mt-n5">Pencatatan</h1>
-            <p class="lead text-white mt-3">Berisi Kumpulan Informasi Pencatatan WBTb yang dilaporkan oleh User.</p>
+            <h1 class="text-white pt-3 mt-n5">Warisan Budaya Tak Benda</h1>
+            <p class="lead text-white mt-3">Berisi Kumpulan Informasi WBTb yang telah diverifikasi Dinas Kebudayaan DIY.</p>
           </div>
         </div>
       </div>
@@ -38,7 +38,7 @@
     <div class="container">
       <div class="row bg-white shadow-lg mt-n6 border-radius-md pb-4 p-3 position-relative w-75 mx-auto">
         <div class="col-lg-8 mt-lg-n2 mt-2">
-          <label>Cari Pencatatan</label>
+          <label>Cari Warisan Budaya</label>
           <div class="input-group">
             <span class="input-group-text"><i class="fas fa-search" aria-hidden="true"></i></span>
             <input class="form-control" placeholder="Masukan kata kunci" type="text">
@@ -55,29 +55,30 @@
     <div class="row">
       <div class="col-lg-12">
         
-        @foreach ($pencatatan as $pencatatan)
+        @foreach ($warisan_budaya as $warisan_budaya)
+              
         <div class="row mt-5">
           <div class="col-lg-6 justify-content-center d-flex flex-column">
             <div class="card">
               <div class="d-block blur-shadow-image">
-                <img src="{{asset('upload/'.$pencatatan->foto)}}" alt="img-blur-shadow-blog-2" class="img-fluid border-radius-lg">
+                <img src="{{asset('upload/'.$warisan_budaya->foto[0])}}" alt="img-blur-shadow-blog-2" class="img-fluid border-radius-lg">
               </div>
-            <div class="colored-shadow" style="background-image: url(&quot; {{asset('upload/'.$pencatatan->foto)}} &quot;);"></div></div>
+            <div class="colored-shadow" style="background-image: url(&quot; {{asset('upload/'.$warisan_budaya->foto[0])}} &quot;);"></div></div>
           </div>
           <div class="col-lg-6 justify-content-center d-flex flex-column pl-lg-5 pt-lg-0 pt-3">
-            <h6 class="category text-warning mt-3">{{$pencatatan->domain}}</h6>
+            <h6 class="category text-warning mt-3">{{$warisan_budaya->domain}}</h6>
             <h3 class="card-title">
-              <a href="{{ url('pencatatan/'.$pencatatan->id) }}" class="text-dark">{{$pencatatan->judul}}</a>
+              <a href="{{ url('wbtb/'.$warisan_budaya->id) }}" class="text-dark">{{$warisan_budaya->judul}}</a>
             </h3>
             <p class="card-description">
               
-              {!!substr(strip_tags($pencatatan->deskripsi, '<p>'),0,270)!!}... <br/>
-              <a href="{{ url('pencatatan/'.$pencatatan->id) }}" class="text-darker icon-move-right text-sm">Read More
+              {!!substr(strip_tags($warisan_budaya->deskripsi, '<p>'),0,270)!!}... <br/>
+              <a href="{{ url('wbtb/'.$warisan_budaya->id) }}" class="text-darker icon-move-right text-sm">Read More
                 <i class="fas fa-arrow-right text-xs ms-1" aria-hidden="true"></i>
               </a>
             </p>
             <p class="author">
-              oleh <a href="" class="ms-1"><span class="font-weight-bold text-warning"> {{ucwords($pencatatan->user->name)}}</span></a>, 2 hari yang lalu
+              oleh <a href="" class="ms-1"><span class="font-weight-bold text-warning"> {{ucwords($warisan_budaya->user->name)}}</span></a>, 2 hari yang lalu
             </p>
           </div>
         </div>

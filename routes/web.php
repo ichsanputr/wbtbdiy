@@ -6,24 +6,25 @@ use App\Http\Livewire\Auth\ForgotPassword;
 use App\Http\Livewire\Auth\ResetPassword;
 use App\Http\Livewire\Auth\SignUp;
 use App\Http\Livewire\Auth\Login;
-use App\Http\Livewire\Dashboard;
 use App\Http\Livewire\Billing;
 use App\Http\Livewire\Profile;
 use App\Http\Livewire\Tables;
 use App\Http\Livewire\StaticSignIn;
 use App\Http\Livewire\StaticSignUp;
 use App\Http\Livewire\Rtl;
-use App\Http\Livewire\Pengusulan;
-use App\Http\Livewire\Pencatatan;
-
 
 use App\Http\Livewire\LaravelExamples\UserProfile;
 use App\Http\Livewire\LaravelExamples\UserManagement;
 
+use App\Http\Livewire\User\Dashboard;
+use App\Http\Livewire\User\Pengusulan;
+use App\Http\Livewire\User\PengusulanEdit;
+use App\Http\Livewire\Admin\Pencatatan;
 use App\Http\Controllers\IndexController;
 
+use App\Http\Livewire\Admin\Dashboard as AdminDashboard;
+
 use Illuminate\Http\Request;
-use App\Models\Pengusulan as PengusulanModel;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,10 +38,8 @@ use App\Models\Pengusulan as PengusulanModel;
 */
 
 Route::get('/', [IndexController::class, 'index'])->name('index');
-Route::get('/pencatatan', [IndexController::class, 'pencatatan'])->name('depan-pencatatan');
-Route::get('/pengusulan', [IndexController::class, 'pengusulan'])->name('depan-pengusulan');
-Route::get('/pengusulan/{pengusulan}', [IndexController::class, 'detailPengusulan'])->name('detail-pengusulan');
-Route::get('/pencatatan/{pencatatan}', [IndexController::class, 'detailPencatatan'])->name('detail-pencatatan');
+Route::get('/wbtb', [IndexController::class, 'wbtb'])->name('wbtb');
+Route::get('/wbtb/{wbtb}', [IndexController::class, 'detail'])->name('detail');
 
 
 Route::get('/sign-up', SignUp::class)->name('sign-up');
@@ -50,15 +49,23 @@ Route::get('/login/forgot-password', ForgotPassword::class)->name('forgot-passwo
  
 Route::get('/reset-password/{id}',ResetPassword::class)->name('reset-password')->middleware('signed');
 
-Route::middleware('auth')->group(function () {
-    Route::get('/dashboard', Dashboard::class)->name('dashboard');
-    Route::get('/billing', Billing::class)->name('billing');
-    Route::get('/profile', Profile::class)->name('profile');
-    Route::get('/tables', Tables::class)->name('tables');
-    Route::get('/static-sign-in', StaticSignIn::class)->name('sign-in');
-    Route::get('/static-sign-up', StaticSignUp::class)->name('static-sign-up');
-    Route::get('/rtl', Rtl::class)->name('rtl');
-    Route::get('/user/pengusulan', Pengusulan::class)->name('pengusulan');
-    Route::get('/user/pencatatan', Pencatatan::class)->name('pencatatan');
+Route::middleware('auth')->prefix('user')->name('user.')->group(function () {
+    Route::get('/', Dashboard::class)->name('dashboard');
+    // Route::get('/billing', Billing::class)->name('billing');
+    // Route::get('/profile', Profile::class)->name('profile');
+    // Route::get('/tables', Tables::class)->name('tables');
+    // Route::get('/static-sign-in', StaticSignIn::class)->name('sign-in');
+    // Route::get('/static-sign-up', StaticSignUp::class)->name('static-sign-up');
+    // Route::get('/rtl', Rtl::class)->name('rtl');
+    Route::get('/pengusulan', Pengusulan::class)->name('pengusulan');
+    Route::get('/pengusulan/{pengusulan}', PengusulanEdit::class)->name('pengusulan.edit');
+
 });
 
+
+Route::middleware('admin')->prefix('admin')->name('admin.')->group(function(){
+    Route::get('/', AdminDashboard::class)->name('dasboard');
+    Route::get('/pencatatan', Pencatatan::class)->name('pencatatan');
+
+});
+Route::fallback(function(){ return response()->view('errors.404', [], 404); });

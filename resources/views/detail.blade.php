@@ -2,14 +2,14 @@
 @section('content')
 <header>
     <div class="page-header min-vh-85" style="background-position-y: 50%;">
-      <div class="position-absolute border-radius-lg border-top-start-radius-0 border-top-end-radius-0 border-bottom-end-radius-0 fixed-top ms-auto w-75 h-100 z-index-0 d-none d-sm-none d-md-block" style="background-image: url('{{asset('upload/'.$pengusulan->foto)}}'); background-size:cover;">
+      <div class="position-absolute border-radius-lg border-top-start-radius-0 border-top-end-radius-0 border-bottom-end-radius-0 fixed-top ms-auto w-75 h-100 z-index-0 d-none d-sm-none d-md-block" style="background-image: url('{{asset('upload/'.$warisan_budaya->foto[0])}}'); background-size:cover;">
       </div>
       <div class="container">
         <div class="row">
           <div class="col-lg-7 d-flex justify-content-center flex-column">
             <div class="card card-body blur d-flex justify-content-center px-5 shadow-lg mt-lg-5 mt-3 py-5">
-              <strong class="text-gradient text-primary mb-0">{{$pengusulan->domain}}</strong>
-              <h3 class="mb-4">{{$pengusulan->judul}}</h3>
+              <strong class="text-gradient text-primary mb-0">{{$warisan_budaya->domain}}</strong>
+              <h3 class="mb-4">{{$warisan_budaya->judul}}</h3>
               {{-- <p class="lead pe-sm-5 me-sm-5">The time is now for it be okay to be great. People in this world shun people for being nice. </p> --}}
               <strong class="mt-3">Bagikan di Sosial Media</strong>
               <div class="d-flex justify-content-start">
@@ -28,9 +28,9 @@
       <div class="row">
         <div class="col-lg-10 ms-auto me-auto">
           <h6 class="opacity-7 text-uppercase font-weight-bolder text-sm">Detail</h6>
-          <h3 class="title mb-4">{{$pengusulan->judul}}</h3>
+          <h3 class="title mb-4">{{$warisan_budaya->judul}}</h3>
           <p class="text-dark" style="text-align:justify">
-            {!! $pengusulan->deskripsi !!}
+            {!! $warisan_budaya->deskripsi !!}
           </p>
         </div>
       </div>
@@ -47,7 +47,7 @@
                   </div>
                   <div class="col-md-5 ms-lg-auto">
                     <div class="p-3">
-                      <img class="w-100 border-radius-md max-height-600 fadeIn2 fadeInBottom" src="{{asset('upload/'.$pengusulan->foto)}}" alt="First slide">
+                      <img class="w-100 border-radius-md max-height-600 fadeIn2 fadeInBottom" src="{{asset('upload/'.$warisan_budaya->foto)}}" alt="First slide">
                     </div>
                   </div>
                 </div>

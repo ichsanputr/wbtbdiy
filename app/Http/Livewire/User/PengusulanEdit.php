@@ -1,11 +1,11 @@
 <?php
-
-namespace App\Http\Livewire;
+namespace App\Http\Livewire\User;
 
 use Livewire\Component;
-use App\Models\Pengusulan as PengusulanModel;
+use App\Models\WarisanBudaya;
+use Illuminate\Support\Facades\Storage;
 
-class Pengusulan extends Component
+class PengusulanEdit extends Component
 {
     public $judul;
     public $lokasi;
@@ -13,12 +13,9 @@ class Pengusulan extends Component
     public $domain;
     public $kondisi;
     public $deskripsi;
-    
+    public $selected_id;
+    public $foto;
 
-    public $showSuccesNotification  = false;
-
-    public $showDemoNotification = false;
-    
     protected $rules = [
         'domain' => 'required',
         'kondisi' => 'required',
@@ -27,27 +24,48 @@ class Pengusulan extends Component
         'deskripsi' => 'required',
     ];
 
-    public function mount() { 
-        
+    public function mount(WarisanBudaya $pengusulan)
+    {
+        $this->judul = $pengusulan->judul;
+        $this->lokasi = $pengusulan->lokasi;
+        $this->pelaku = $pengusulan->pelaku;
+        $this->domain = $pengusulan->domain;
+        $this->kondisi = $pengusulan->kondisi;
+        $this->deskripsi = $pengusulan->deskripsi;
+        $this->selected_id = $pengusulan->id;
+        $this->foto = json_encode($pengusulan->foto);
     }
 
-    public function save() {
+    public function render()
+    {
+        return view('livewire.user.pengusulan-edit');
+    }
+
+    public function save()
+    {
         $this->validate();
-        // $this->uploadFoto();
 
-        $pengusulan = PengusulanModel::create([
-            'judul' => $this->judul,
-            'lokasi' => $this->lokasi,
-            'pelaku' => $this->pelaku,
-            'domain' => $this->domain,
-            'kondisi' => $this->kondisi,
-            'deskripsi' => $this->deskripsi,
-            'foto' => json_encode($this->uploadFoto()),
-            'user_id' => auth()->user()->id,
-        ]);
+        $warisan_budaya = WarisanBudaya::find($this->selected_id);
 
-        session()->flash('message', 'Berhasil membuat pengusulan');
-        return redirect()->to('/user/pengusulan');
+        $warisan_budaya->judul = $this->judul;
+        $warisan_budaya->lokasi = $this->lokasi;
+        $warisan_budaya->pelaku = $this->pelaku;
+        $warisan_budaya->domain = $this->domain;
+        $warisan_budaya->kondisi = $this->kondisi;
+        $warisan_budaya->deskripsi = $this->deskripsi;
+        $warisan_budaya->foto = json_encode($this->uploadFoto());
+        $warisan_budaya->save();
+        if(null != json_decode($this->foto) || json_decode($this->foto)[0] != 'default.jpg'){
+            $foto = json_decode($this->foto);
+            $foto = array_walk($foto, function($item){
+                unlink(public_path('upload/'.$item)); 
+            });
+
+        }
+
+        session()->flash('message', 'Berhasil mengubah pengusulan');
+        return redirect()->to('/user/pengusulan/'.$this->selected_id);
+
     }
 
     public function uploadFoto(){
@@ -86,10 +104,5 @@ class Pengusulan extends Component
     {
         $ext = explode("/", $mime_type);
         return $ext[1];
-    }
-
-    public function render()
-    {
-        return view('livewire.pengusulan', ['pengusulan' => PengusulanModel::whereUserId(auth()->user()->id)->get()]);
     }
 }

@@ -18,9 +18,14 @@ class Login extends Component
 
     public function mount() {
         if(auth()->user()){
-            redirect('/dashboard');
+            if(auth()->user()->is_admin == 1){
+                redirect('/admin');
+            }else{
+                redirect('/user');
+            }
         }
-        $this->fill(['email' => 'admin@softui.com', 'password' => 'secret']);
+        
+        // $this->fill(['email' => 'admin@softui.com', 'password' => 'secret']);
     }
 
     public function login() {
@@ -28,7 +33,11 @@ class Login extends Component
         if(auth()->attempt(['email' => $this->email, 'password' => $this->password], $this->remember_me)) {
             $user = User::where(["email" => $this->email])->first();
             auth()->login($user, $this->remember_me);
-            return redirect()->intended('/dashboard');        
+            if(auth()->user()->is_admin == 1){
+                return redirect()->route("admin.dashboard");
+            }else{
+                return redirect()->route('user.dashboard');        
+            }
         }
         else{
             return $this->addError('email', trans('auth.failed')); 

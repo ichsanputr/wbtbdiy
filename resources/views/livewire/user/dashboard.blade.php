@@ -221,83 +221,72 @@
           </div>
         </div> --}}
       </div>
-      <div class="row my-4">
-        <div class="col-lg-12 col-md-6 mb-md-0 mb-4">
-          <div class="card">
-            <div class="card-header pb-0 px-3">
-                <h6 class="mb-0">{{ __('Form Pengusulan') }}</h6>
+      <div class="row">
+        <div class="col-12">
+          <div class="card mb-4">
+            <div class="card-header pb-0">
+              <h6>Daftar Pengusulan</h6>
             </div>
-            <div class="card-body pt-4 p-3">
-
-                
-
-                <form wire:submit.prevent="save" action="#" method="POST" role="form text-left">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="user-name" class="form-control-label">{{ __('Judul Warisan Budaya') }}</label>
-                                <div class="@error('user.name')border border-danger rounded-3 @enderror">
-                                    <input wire:model="user.name" class="form-control" type="text" placeholder="Judul"
-                                        id="user-name">
-                                </div>
-                                @error('user.name') <div class="text-danger">{{ $message }}</div> @enderror
-                            </div>
+            <div class="card-body px-0 pt-0 pb-2">
+              <div class="table-responsive p-0">
+                <table class="table align-items-center mb-0">
+                  <thead>
+                    <tr>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Judul-Domain</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Lokasi-Kondisi</th>
+                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Status</th>
+                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Tanggal Pengajuan</th>
+                      <th class="text-secondary opacity-7"></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    @forelse ($warisan_budaya as $warisan_budaya)
+                    <tr>
+                      <td>
+                        <div class="d-flex px-2 py-1">
+                          
+                          <div class="d-flex flex-column justify-content-center">
+                            <h6 class="mb-0 text-sm">{{$warisan_budaya->judul}}</h6>
+                            <p class="text-xs text-secondary mb-0">{{$warisan_budaya->domain}}</p>
+                          </div>
                         </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="user-email" class="form-control-label">{{ __('Lokasi') }}</label>
-                                <div class="@error('user.email')border border-danger rounded-3 @enderror">
-                                    <input wire:model="user.email" class="form-control" type="text"
-                                        placeholder="Lokasi" id="user-email">
-                                </div>
-                                @error('user.email') <div class="text-danger">{{ $message }}</div> @enderror
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="user.phone" class="form-control-label">{{ __('Pelaku Warisan Budaya') }}</label>
-                                <div class="@error('user.phone')border border-danger rounded-3 @enderror">
-                                    <input wire:model="user.phone" class="form-control" type="text"
-                                        placeholder="Pelaku Warisan Budaya" id="phone">
-                                </div>
-                                @error('user.phone') <div class="text-danger">{{ $message }}</div> @enderror
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="user.location" class="form-control-label">{{ __('Kondisi') }}</label>
-                                <div class="@error('user.location') border border-danger rounded-3 @enderror">
-                                    <select name="kondisi" id="" class="form-control">
-                                        <option value="">Sedang Berkembang</option>
-                                        <option value="">Masih Bertahan</option>
-                                        <option value="">Sudah Berkurang</option>
-                                        <option value="">Terancam Punah</option>
-                                        <option value="">Punah</option>
-                                    </select>
-                                </div>
-                                @error('user.location') <div class="text-danger">{{ $message }}</div> @enderror
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="about">{{ 'Deskripsi' }}</label>
-                        <div class="@error('user.about')border border-danger rounded-3 @enderror">
-                            <textarea wire:model="user.about" class="form-control" id="about" rows="3"
-                                placeholder="Say something about yourself"></textarea>
-                        </div>
-                        @error('user.about') <div class="text-danger">{{ $message }}</div> @enderror
-                    </div>
-                    <div class="d-flex justify-content-end">
-                        <button type="submit" class="btn bg-gradient-dark btn-md mt-4 mb-4">{{ 'Simpan' }}</button>
-                    </div>
-                </form>
-
+                      </td>
+                      <td>
+                        <p class="text-xs font-weight-bold mb-0">{{$warisan_budaya->lokasi}}</p>
+                        <p class="text-xs text-secondary mb-0">{{$warisan_budaya->kondisi}}</p>
+                      </td>
+                      <td class="align-middle text-center text-sm">
+                        @if ($warisan_budaya->is_approved == 1)
+                          <span class="badge badge-sm bg-gradient-success">Diterima</span>  
+                        @else
+                          <span class="badge badge-sm bg-gradient-secondary">Diajukan</span>
+                        @endif
+                      </td>
+                      <td class="align-middle text-center">
+                        <span class="text-secondary text-xs font-weight-bold">{{$warisan_budaya->created_at}}</span>
+                      </td>
+                      <td class="align-middle">
+                        <a href="{{route("user.pengusulan.edit", ["pengusulan"=>$warisan_budaya->id])}}" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                          Edit
+                        </a>
+                      </td>
+                    </tr>
+                    @empty
+                    <tr>
+                      <td colspan="5" class="text-center">
+                        <h6 class="text-muted">Belum ada Pengusulan Warisan Budaya</h6>
+                        <a class="btn bg-gradient-dark btn-md mt-4 mb-4" href="{{ url("/user/pengusulan") }}"><i class="fas fa-plus"></i> Buat Baru</a>
+                      </td>
+                    </tr>
+                    @endforelse
+                  </tbody>
+                </table>
+              </div>
             </div>
-        </div>
+          </div>
         </div>
       </div>
+      
     </div>
   </main>
 

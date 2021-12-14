@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePencatatansTable extends Migration
+class CreateWarisanBudayasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreatePencatatansTable extends Migration
      */
     public function up()
     {
-        Schema::create('pencatatan', function (Blueprint $table) {
+        Schema::create('warisan_budaya', function (Blueprint $table) {
             $table->id();
             $table->string("judul");
             $table->enum("kondisi", ['berkembang', 'bertahan', 'berkurang', 'terancam', 'punah']);
@@ -36,6 +36,6 @@ class CreatePencatatansTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pencatatans');
+        Schema::dropIfExists('warisan_budayas');
     }
 }

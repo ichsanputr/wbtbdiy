@@ -5,10 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Pencatatan extends Model
+class WarisanBudaya extends Model
 {
     use HasFactory;
-    protected $table = "pencatatan";
+    protected $table = "warisan_budaya";
 
     protected $fillable = [
         "judul",
@@ -19,7 +19,8 @@ class Pencatatan extends Model
         "foto",
         "video",
         "domain",
-        "user_id"
+        "user_id",
+        "is_approved"
     ];
 
     protected $cast = [
@@ -35,6 +36,6 @@ class Pencatatan extends Model
     {
         $value = (0 === sizeof(json_decode($value)))? array("default.jpg") :json_decode($value);
         
-        return $value[0];
+        return $value;
     }
 }
