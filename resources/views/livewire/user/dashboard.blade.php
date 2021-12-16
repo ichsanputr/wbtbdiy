@@ -266,7 +266,12 @@
                         <span class="text-secondary text-xs font-weight-bold">{{$warisan_budaya->created_at}}</span>
                       </td>
                       <td class="align-middle">
-                        <a href="{{route('preview', ['id' => $warisan_budaya->id])}}"  class="btn btn-sm bg-gradient-dark font-weight-bold text-xs" target="_blank">Preview</a>
+                        @if ($warisan_budaya->is_approved == 1)
+                        <a href="{{route('detail', ['wbtb' => $warisan_budaya->id])}}"  class="btn btn-sm bg-gradient-dark font-weight-bold text-xs" target="_blank">Show</a>                                  
+                        @else
+                        <a href="{{route('preview', ['id' => $warisan_budaya->id])}}"  class="btn btn-sm bg-gradient-dark font-weight-bold text-xs" target="_blank">Preview</a>                            
+                        @endif
+                        
                         <a href="{{route("user.pengusulan.edit", ["pengusulan"=>$warisan_budaya->id])}}" class="btn btn-sm bg-gradient-success font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
                           Edit
                         </a>
