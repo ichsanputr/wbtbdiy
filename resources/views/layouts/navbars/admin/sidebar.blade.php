@@ -12,8 +12,8 @@
     <div class="collapse navbar-collapse w-auto" id="sidenav-collapse-main">
         <ul class="navbar-nav">
             <li class="nav-item pb-2">
-                <a class="nav-link {{ Route::currentRouteName() == 'dashboard' ? 'active' : '' }}"
-                    href="{{ route('dashboard') }}">
+                <a class="nav-link {{ Route::currentRouteName() == 'admin.dashboard' ? 'active' : '' }}"
+                    href="{{ route('admin.dashboard') }}">
                     <div
                         class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                         <svg width="12px" height="12px" viewBox="0 0 45 40" version="1.1"
@@ -44,8 +44,8 @@
                 <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Fitur Utama</h6>
             </li>
             <li class="nav-item">
-                <a class="nav-link {{ Route::currentRouteName() == 'pengusulan' ? 'active' : '' }}"
-                    href="{{ route('pengusulan') }}">
+                <a class="nav-link {{ Route::currentRouteName() == 'admin.warisan-budaya' ? 'active' : '' }}"
+                    href="{{ route('admin.warisan-budaya') }}">
                     <div
                         class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                         <svg width="12px" height="12px" viewBox="0 0 46 42" version="1.1"
@@ -71,20 +71,53 @@
                             </g>
                         </svg>
                     </div>
-                    <span class="nav-link-text ms-1">Pengusulan</span>
+                    <span class="nav-link-text ms-1">Warisan Budaya</span>
                 </a>
             </li>
             <li class="nav-item pb-2">
-                <a class="nav-link {{ Route::currentRouteName() == 'pencatatan' ? 'active' : '' }}"
-                    href="{{ route('pencatatan') }}">
+                <a class="nav-link {{ Route::currentRouteName() == 'admin.warisan-budaya' ? 'active' : '' }}"
+                    href="{{ route('admin.warisan-budaya') }}">
                     <div
                         class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                         <i style="font-size: 1rem;" class="fas fa-lg fa-list-ul ps-2 pe-2 text-center
-                        {{ in_array(request()->route()->getName(),['pencatatan']) ? 'text-white' : 'text-dark' }}"></i>
+                        {{ in_array(request()->route()->getName(),['admin.warisan-budaya']) ? 'text-white' : 'text-dark' }}"></i>
                     </div>
                     <span class="nav-link-text ms-1">Pencatatan</span>
                 </a>
             </li>
+            {{-- <li class="nav-item pb-2">
+                <a class="nav-link {{ Route::currentRouteName() == 'admin.berita' ? 'active' : '' }}"
+                    href="{{ route('admin.berita') }}">
+                    <div
+                        class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
+                        <i style="font-size: 1rem;" class="fas fa-lg fa-list-ul ps-2 pe-2 text-center
+                        {{ in_array(request()->route()->getName(),['admin.berita']) ? 'text-white' : 'text-dark' }}"></i>
+                    </div>
+                    <span class="nav-link-text ms-1">Berita</span>
+                </a>
+            </li>
+            <li class="nav-item pb-2">
+                <a class="nav-link {{ Route::currentRouteName() == 'admin.halaman' ? 'active' : '' }}"
+                    href="{{ route('admin.halaman') }}">
+                    <div
+                        class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
+                        <i style="font-size: 1rem;" class="fas fa-lg fa-list-ul ps-2 pe-2 text-center
+                        {{ in_array(request()->route()->getName(),['admin.halaman']) ? 'text-white' : 'text-dark' }}"></i>
+                    </div>
+                    <span class="nav-link-text ms-1">Pages</span>
+                </a>
+            </li>
+            <li class="nav-item pb-2">
+                <a class="nav-link {{ Route::currentRouteName() == 'admin.event' ? 'active' : '' }}"
+                    href="{{ route('admin.event') }}">
+                    <div
+                        class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
+                        <i style="font-size: 1rem;" class="fas fa-lg fa-list-ul ps-2 pe-2 text-center
+                        {{ in_array(request()->route()->getName(),['admin.event']) ? 'text-white' : 'text-dark' }}"></i>
+                    </div>
+                    <span class="nav-link-text ms-1">Event</span>
+                </a>
+            </li> --}}
 
             {{-- <li class="nav-item mt-2">
                 <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Pengaturan</h6>

@@ -33,5 +33,15 @@ class IndexController extends Controller
         // dd($warisan_budaya->judul);
         return view("detail", ["warisan_budaya" => $wbtb]);
     }
+    public function preview($id)
+    {
+        $warisan_budaya = WarisanBudaya::whereIsApproved(0)->whereId($id)->firstOrFail();
+        
+        if(auth()->user()->is_admin == 1 || auth()->user()->id == $warisan_budaya->user_id){
+            return view("preview", ["warisan_budaya" => $warisan_budaya]);
+        }
 
+        return abort(404);
+        
+    }
 }

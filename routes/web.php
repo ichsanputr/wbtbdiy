@@ -6,23 +6,24 @@ use App\Http\Livewire\Auth\ForgotPassword;
 use App\Http\Livewire\Auth\ResetPassword;
 use App\Http\Livewire\Auth\SignUp;
 use App\Http\Livewire\Auth\Login;
-use App\Http\Livewire\Billing;
-use App\Http\Livewire\Profile;
-use App\Http\Livewire\Tables;
-use App\Http\Livewire\StaticSignIn;
-use App\Http\Livewire\StaticSignUp;
-use App\Http\Livewire\Rtl;
+// use App\Http\Livewire\Billing;
+// use App\Http\Livewire\Profile;
+// use App\Http\Livewire\Tables;
+// use App\Http\Livewire\StaticSignIn;
+// use App\Http\Livewire\StaticSignUp;
+// use App\Http\Livewire\Rtl;
 
-use App\Http\Livewire\LaravelExamples\UserProfile;
-use App\Http\Livewire\LaravelExamples\UserManagement;
+// use App\Http\Livewire\LaravelExamples\UserProfile;
+// use App\Http\Livewire\LaravelExamples\UserManagement;
+use App\Http\Controllers\IndexController;
 
 use App\Http\Livewire\User\Dashboard;
 use App\Http\Livewire\User\Pengusulan;
 use App\Http\Livewire\User\PengusulanEdit;
-use App\Http\Livewire\Admin\Pencatatan;
-use App\Http\Controllers\IndexController;
 
 use App\Http\Livewire\Admin\Dashboard as AdminDashboard;
+use App\Http\Livewire\Admin\Berita as AdminBerita;
+use App\Http\Livewire\Admin\WarisanBudaya;
 
 use Illuminate\Http\Request;
 
@@ -40,6 +41,7 @@ use Illuminate\Http\Request;
 Route::get('/', [IndexController::class, 'index'])->name('index');
 Route::get('/wbtb', [IndexController::class, 'wbtb'])->name('wbtb');
 Route::get('/wbtb/{wbtb}', [IndexController::class, 'detail'])->name('detail');
+Route::get('/preview/{id}', [IndexController::class, 'preview'])->name('preview');
 
 
 Route::get('/sign-up', SignUp::class)->name('sign-up');
@@ -64,8 +66,10 @@ Route::middleware('auth')->prefix('user')->name('user.')->group(function () {
 
 
 Route::middleware('admin')->prefix('admin')->name('admin.')->group(function(){
-    Route::get('/', AdminDashboard::class)->name('dasboard');
-    Route::get('/pencatatan', Pencatatan::class)->name('pencatatan');
-
+    Route::get('/', AdminDashboard::class)->name('dashboard');
+    Route::get('/warisan-budaya', WarisanBudaya::class)->name('warisan-budaya');
+    Route::get('/berita', AdminBerita::class)->name('berita');
+    // Route::get()->name('halaman');
+    // Route::get()->name('event');
 });
 Route::fallback(function(){ return response()->view('errors.404', [], 404); });
