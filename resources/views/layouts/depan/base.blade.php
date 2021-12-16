@@ -45,7 +45,7 @@
                 
                 <li class="nav-item dropdown dropdown-hover mx-2">
                   <a class="nav-link ps-2 d-flex justify-content-between cursor-pointer align-items-center" id="dropdownMenuBlocks" href="{{ url('wbtb') }}" aria-expanded="false">
-                    Warisan Budaya
+                    Pencatatan
                   </a>
                   
                 </li>
