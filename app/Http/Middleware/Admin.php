@@ -16,6 +16,9 @@ class Admin
      */
     public function handle(Request $request, Closure $next)
     {
-        return (auth()->user()->is_admin === 1 )? $next($request) : redirect('/');
+        if(null === auth()->user()){
+            return abort("404");
+        }
+        return (auth()->user()->is_admin === 1 )? $next($request) : abort("404");
     }
 }

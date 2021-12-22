@@ -42,6 +42,8 @@ Route::get('/', [IndexController::class, 'index'])->name('index');
 Route::get('/wbtb', [IndexController::class, 'wbtb'])->name('wbtb');
 Route::get('/wbtb/{wbtb}', [IndexController::class, 'detail'])->name('detail');
 Route::get('/preview/{id}', [IndexController::class, 'preview'])->name('preview');
+Route::get('/berita', [IndexController::class, 'berita'])->name('berita');
+Route::get('/berita/{berita}', [IndexController::class, 'detailBerita'])->name('detail-berita');
 
 
 Route::get('/sign-up', SignUp::class)->name('sign-up');

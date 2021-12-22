@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\WarisanBudaya;
 use App\Models\User;
+use App\Models\Berita;
 
 class IndexController extends Controller
 {
@@ -43,5 +44,16 @@ class IndexController extends Controller
 
         return abort(404);
         
+    }
+
+    public function berita()
+    {
+        return view("berita", ["berita" => Berita::orderByDesc('created_at')->get()]);
+        
+    }
+
+    public function detailBerita(Berita $berita)
+    {
+        return view("detail-berita", ["berita" => $berita]);
     }
 }

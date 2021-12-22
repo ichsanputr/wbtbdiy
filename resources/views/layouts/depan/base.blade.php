@@ -50,7 +50,7 @@
                   
                 </li>
                 <li class="nav-item dropdown dropdown-hover mx-2">
-                  <a class="nav-link ps-2 d-flex justify-content-between cursor-pointer align-items-center" id="dropdownMenuDocs" href="{{ url('') }}" aria-expanded="false">
+                  <a class="nav-link ps-2 d-flex justify-content-between cursor-pointer align-items-center" id="dropdownMenuDocs" href="{{ url('/berita') }}" aria-expanded="false">
                     Berita
                   </a>
                   
@@ -205,28 +205,16 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-5 ms-auto">
-          <h4 class="mb-1">Kontak Kami</h4>
-          <p class="mb-0">Ikuti akun resmi media sosial Dinas Kebudayaan DIY</p>
+          
         </div>
         <div class="col-lg-7 me-lg-auto my-lg-auto text-lg-right mt-5">
-          <a href="https://twitter.com/" class="btn btn-info mb-0 me-2" target="_blank">
-            <i class="fab fa-twitter me-1"></i> Twitter
-          </a>
-          <a href="https://www.facebook.com/" class="btn btn-primary mb-0 me-2" target="_blank">
-            <i class="fab fa-facebook-square me-1"></i> Facebook
-          </a>
-          <a href="https://www.instagram.com" class="btn btn-dark mb-0 me-2" target="_blank">
-            <i class="fab fa-instagram me-1"></i> Instagram
-          </a>
-          <a href="https://wa.me/6282316078902/?text=Halo%20Admin%20Dinas%20Kebudayaan" class="btn btn-success mb-0 me-2" target="_blank">
-            <i class="fab fa-whatsapp me-1"></i> Chat on WA
-          </a>
+          
         </div>
       </div>
     </div>
   </div>
   <!-- -------   END PRE-FOOTER 2 - simple social line w/ title & 3 buttons    -------- -->
-  <footer class="footer pt-5 mt-5">
+  {{-- <footer class="footer pt-5 mt-5">
     <hr class="horizontal dark mb-5">
     <div class="container">
       <div class=" row">
@@ -239,6 +227,63 @@
             </p>
           </div>
         </div>
+      </div>
+    </div>
+  </footer> --}}
+  <footer class="footer py-7 position-relative bg-gradient-dark overflow-hidden">
+    <div class="position-absolute w-100 z-inde-1 top-0 mt-n3">
+      <svg width="100%" viewBox="0 -2 1920 157" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <title>wave-down</title>
+        <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+          <g id="Artboard" fill="#FFFFFF" fill-rule="nonzero">
+            <g id="wave-down">
+              <path d="M0,60.8320331 C299.333333,115.127115 618.333333,111.165365 959,47.8320321 C1299.66667,-15.5013009 1620.66667,-15.2062179 1920,47.8320331 L1920,156.389409 L0,156.389409 L0,60.8320331 Z" id="Path-Copy-2" transform="translate(960.000000, 78.416017) rotate(180.000000) translate(-960.000000, -78.416017) "></path>
+            </g>
+          </g>
+        </g>
+      </svg>
+    </div>
+    <div class="container position-relative mt-8">
+      <div class="row">
+        <div class="col-lg-5 text-start mb-lg-0 mb-3">
+          <h4 class="text-white">Kontak Kami</h4>
+          <p class="text-white opacity-8 mb-0">Ikuti akun resmi media sosial Dinas Kebudayaan DIY</p>
+        </div>
+        <div class="col-lg-7 my-auto text-end">
+          <div class="row">
+            <ul class="list-inline">
+              <li class="list-inline-item"><a href="https://twitter.com/" class="btn btn-info mb-0 me-2" target="_blank">
+                <i class="fab fa-twitter me-1"></i> Twitter</a>
+              </li>
+              <li class="list-inline-item">
+                <a href="https://www.facebook.com/" class="btn btn-primary mb-0 me-2" target="_blank">
+                  <i class="fab fa-facebook-square me-1"></i> FB
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="https://www.instagram.com" class="btn btn-dark mb-0 me-2" target="_blank">
+                  <i class="fab fa-instagram me-1"></i> IG
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="https://wa.me/6282316078902/?text=Halo%20Admin%20Dinas%20Kebudayaan" class="btn btn-success mb-0 me-2" target="_blank">
+                  <i class="fab fa-whatsapp me-1"></i> WhatsApp
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <hr class="horizontal light my-4">
+      <div class="row">
+        <div class="col-lg-12 col-md-12 my-auto">
+          <p class="text-white mb-0 opacity-8">
+            Copyright © <script>
+              document.write(new Date().getFullYear())
+            </script> WBTb-DIY oleh Dinas Kebudayaan Daerah Istimewa Yogyakarta.
+          </p>
+        </div>
+        
       </div>
     </div>
   </footer>
