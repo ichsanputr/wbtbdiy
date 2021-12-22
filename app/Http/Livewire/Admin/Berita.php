@@ -39,6 +39,6 @@ class Berita extends Component
 
         $this->is_create = false;
         $this->is_update = false;
-        $this->message = "Berhasil membuat Berita. Lihat berita <a href='".route('detail-berita', ['id'=>$berita->id])."' target='_blank'>di sini</a>";
+        $this->message = "Berhasil membuat Berita. Lihat berita <a href='".route('detail-berita', ['berita'=>$berita->id])."' target='_blank'>di sini</a>";
     }
 }
