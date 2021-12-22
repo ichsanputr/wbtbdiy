@@ -2,7 +2,7 @@
 @section('content')
 <header>
     <div class="page-header min-vh-85" style="background-position-y: 50%;">
-      <div class="position-absolute border-radius-lg border-top-start-radius-0 border-top-end-radius-0 border-bottom-end-radius-0 fixed-top ms-auto w-75 h-100 z-index-0 d-none d-sm-none d-md-block" style="background-image: url('{{asset('upload/default.jpeg')}}'); background-size:cover;">
+      <div class="position-absolute border-radius-lg border-top-start-radius-0 border-top-end-radius-0 border-bottom-end-radius-0 fixed-top ms-auto w-75 h-100 z-index-0 d-none d-sm-none d-md-block" style="background-image: url('{{asset('upload/default.jpg')}}'); background-size:cover;">
       </div>
       <div class="container">
         <div class="row">
