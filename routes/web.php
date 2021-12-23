@@ -23,7 +23,9 @@ use App\Http\Livewire\User\PengusulanEdit;
 
 use App\Http\Livewire\Admin\Dashboard as AdminDashboard;
 use App\Http\Livewire\Admin\Berita as AdminBerita;
-use App\Http\Livewire\Admin\WarisanBudaya;
+use App\Http\Livewire\Admin\Pengusulan as AdminPengusulan;
+use App\Http\Livewire\Admin\Pencatatan as AdminPencatatan;
+
 
 use Illuminate\Http\Request;
 
@@ -69,7 +71,8 @@ Route::middleware('auth')->prefix('user')->name('user.')->group(function () {
 
 Route::middleware('admin')->prefix('admin')->name('admin.')->group(function(){
     Route::get('/', AdminDashboard::class)->name('dashboard');
-    Route::get('/warisan-budaya', WarisanBudaya::class)->name('warisan-budaya');
+    Route::get('/pengusulan', AdminPengusulan::class)->name('pengusulan');
+    Route::get('/pencatatan', AdminPencatatan::class)->name('pencatatan');
     Route::get('/berita', AdminBerita::class)->name('berita');
     // Route::get()->name('halaman');
     // Route::get()->name('event');

@@ -10,7 +10,7 @@
             <div class="card card-body blur d-flex justify-content-center px-5 shadow-lg mt-lg-5 mt-3 py-5">
               <h3 class="mb-4">{{$berita->judul}}</h3>
               {{-- <p class="lead pe-sm-5 me-sm-5">The time is now for it be okay to be great. People in this world shun people for being nice. </p> --}}
-              <strong class="mt-3">Bagikan di Sosial Media</strong>
+              <strong class="mt-3">Oleh</strong>
               <div class="d-flex justify-content-start">
                 <a href="javascript:;"><i class="fab fa-facebook text-dark me-4 text-lg" aria-hidden="true"></i></a>
                 <a href="javascript:;"><i class="fab fa-twitter text-dark me-4 text-lg" aria-hidden="true"></i></a>

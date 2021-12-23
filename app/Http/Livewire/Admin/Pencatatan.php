@@ -3,7 +3,7 @@
 namespace App\Http\Livewire\Admin;
 
 use Livewire\Component;
-use App\Models\Pencatatan as PencatatanModel;
+use App\Models\WarisanBudaya;
 
 class Pencatatan extends Component
 {
@@ -35,7 +35,7 @@ class Pencatatan extends Component
         $this->validate();
         // $this->uploadFoto();
 
-        $pencatatan = PencatatanModel::create([
+        $pencatatan = WarisanBudaya::create([
             'judul' => $this->judul,
             'lokasi' => $this->lokasi,
             'pelaku' => $this->pelaku,
@@ -90,6 +90,6 @@ class Pencatatan extends Component
 
     public function render()
     {
-        return view('livewire.pencatatan', ['pencatatan' => PencatatanModel::whereUserId(auth()->user()->id)->get()]);
+        return view('livewire.admin.pencatatan', ['warisan_budaya' => WarisanBudaya::whereUserId(auth()->user()->id)->get()]);
     }
 }

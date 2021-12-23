@@ -24,7 +24,9 @@ class WarisanBudaya extends Model
     ];
 
     protected $cast = [
-        'foto' => 'array'
+        'foto' => 'array',
+        'created_at' => 'datetime:Y-m-d',
+        'updated_at' => 'datetime:Y-m-d',
     ];
 
     public function user()

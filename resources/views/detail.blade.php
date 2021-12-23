@@ -11,11 +11,10 @@
               <strong class="text-gradient text-primary mb-0">{{$warisan_budaya->domain}}</strong>
               <h3 class="mb-4">{{$warisan_budaya->judul}}</h3>
               {{-- <p class="lead pe-sm-5 me-sm-5">The time is now for it be okay to be great. People in this world shun people for being nice. </p> --}}
-              <strong class="mt-3">Bagikan di Sosial Media</strong>
-              <div class="d-flex justify-content-start">
-                <a href="javascript:;"><i class="fab fa-facebook text-dark me-4 text-lg" aria-hidden="true"></i></a>
-                <a href="javascript:;"><i class="fab fa-twitter text-dark me-4 text-lg" aria-hidden="true"></i></a>
-              </div>
+              <span class="mt-3">Oleh</span>
+                <strong class="opacity-7 text-uppercase font-weight-bolder text-sm">
+                  {{$warisan_budaya->user->name}}
+                </strong>
             </div>
           </div>
         </div>
@@ -27,7 +26,7 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-10 ms-auto me-auto">
-          <h6 class="opacity-7 text-uppercase font-weight-bolder text-sm">Detail</h6>
+          <h6 class="opacity-7 text-uppercase font-weight-bolder text-sm">Diterbitkan pada {{$warisan_budaya->updated_at}}</h6>
           <h3 class="title mb-4">{{$warisan_budaya->judul}}</h3>
           <span class="text-dark" style="text-align:justify">
             {!! $warisan_budaya->deskripsi !!}

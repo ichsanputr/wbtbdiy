@@ -151,6 +151,11 @@
             callbacks: {
                 onChange: function(contents, $editable) {
                             @this.set('deskripsi', contents);
+                },
+                onPaste: function(e){
+                    var bufferText = ((e.originalEvent || e).clipboardData || window.clipboardData).getData('Text');
+                    e.preventDefault();
+                    document.execCommand('insertText', false, bufferText);
                 }
             }
         });

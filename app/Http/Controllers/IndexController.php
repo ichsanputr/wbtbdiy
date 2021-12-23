@@ -26,7 +26,7 @@ class IndexController extends Controller
 
     public function wbtb()
     {
-        return view("wbtb", ['warisan_budaya' => WarisanBudaya::whereIsApproved(1)->get()]);
+        return view("wbtb", ['warisan_budaya' => WarisanBudaya::whereIsApproved(1)->orderByDesc("id")->get()]);
     }
 
     public function detail(WarisanBudaya $wbtb)

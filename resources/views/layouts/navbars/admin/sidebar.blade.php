@@ -44,8 +44,8 @@
                 <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Fitur Utama</h6>
             </li>
             <li class="nav-item">
-                <a class="nav-link {{ Route::currentRouteName() == 'admin.warisan-budaya' ? 'active' : '' }}"
-                    href="{{ route('admin.warisan-budaya') }}">
+                <a class="nav-link {{ Route::currentRouteName() == 'admin.pengusulan' ? 'active' : '' }}"
+                    href="{{ route('admin.pengusulan') }}">
                     <div
                         class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                         <svg width="12px" height="12px" viewBox="0 0 46 42" version="1.1"
@@ -71,16 +71,16 @@
                             </g>
                         </svg>
                     </div>
-                    <span class="nav-link-text ms-1">Warisan Budaya</span>
+                    <span class="nav-link-text ms-1">Pengusulan</span>
                 </a>
             </li>
             <li class="nav-item pb-2">
-                <a class="nav-link {{ Route::currentRouteName() == 'admin.warisan-budaya' ? 'active' : '' }}"
-                    href="{{ route('admin.warisan-budaya') }}">
+                <a class="nav-link {{ Route::currentRouteName() == 'admin.pencatatan' ? 'active' : '' }}"
+                    href="{{ route('admin.pencatatan') }}">
                     <div
                         class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                         <i style="font-size: 1rem;" class="fas fa-lg fa-list-ul ps-2 pe-2 text-center
-                        {{ in_array(request()->route()->getName(),['admin.warisan-budaya']) ? 'text-white' : 'text-dark' }}"></i>
+                        {{ in_array(request()->route()->getName(),['admin.pencatatan']) ? 'text-white' : 'text-dark' }}"></i>
                     </div>
                     <span class="nav-link-text ms-1">Pencatatan</span>
                 </a>
