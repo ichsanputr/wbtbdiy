@@ -237,6 +237,7 @@
     
     
 </section>
+<meta name="csrf-token" content="{{ csrf_token() }}">
 <!-- <section class="py-sm-7" id="demografis">
   <div class="bg-gradient-dark position-relative m-3 border-radius-xl overflow-hidden">
     <img src="{{ asset('assets/soft-ui/img/shapes/waves-white.svg') }}" alt="pattern-lines" class="position-absolute start-0 top-md-0 w-100 opacity-6">
@@ -311,14 +312,18 @@
   
 
 document.addEventListener('DOMContentLoaded', function() {
+  var event_url = "{{url('/event')}}";
   var calendarEl = document.getElementById('calendar');
 
   var calendar = new FullCalendar.Calendar(calendarEl, {
     timeZone: 'UTC',
     initialView: 'dayGridMonth',
-    events: 'https://fullcalendar.io/demo-events.json',
+    events: event_url,
     editable: true,
-    selectable: true
+    selectable: true,
+    eventClick: function(event){
+      console.log(event);
+    },
   });
 
   calendar.render();

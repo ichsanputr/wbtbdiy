@@ -1,18 +1,18 @@
 <main>
     <div class="container-fluid py-4">
       @if ($is_create)
-                      @include('livewire.admin.berita.create')
+                      @include('livewire.admin.event.create')
                   @endif
                   
                   @if($is_update)
-                    @include('livewire.admin.berita.update')                   
+                    @include('livewire.admin.event.update')                   
                   @endif
         <div class="row">
             <div class="col-12">
               <div class="card mb-4 card-header pb-0">
                 <div class="row">
                   <div class="col-6 d-flex align-items-center">
-                    <h6 class="mb-0">Berita</h6>
+                    <h6 class="mb-0">Event</h6>
                   </div>
                   <div class="col-6 text-end">
                     <button class="btn bg-gradient-dark mb-0" wire:click='create'><i class="fas fa-plus" aria-hidden="true"></i> Buat Baru</button>
@@ -37,30 +37,26 @@
                       <thead>
                         <tr>
                           <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Judul</th>
-                          <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Konten</th>
-                          <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Tanggal Posting</th>
+                          <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Mulai-Berakhir</th>
                           <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"></th>
                         </tr>
                       </thead>
                       <tbody>
-                        @forelse ($berita as $berita)
+                        @forelse ($event as $event)
                         <tr>
                             <td>
                             <div class="d-flex px-2 py-1">
                               
                               <div class="d-flex flex-column justify-content-center">
-                                <h6 class="mb-0 text-sm"><a href="">{{$berita->judul}}</a> </h6>
+                                <h6 class="mb-0 text-sm"><a href="">{{$event->judul}}</a> </h6>
                               </div>
                             </div>
                             </td>
-                            <td>
-                                {!!substr(strip_tags($berita->konten, '<p>'),0,100)!!}...
-                            </td> 
                             <td class="align-middle text-center">
-                                <span class="text-secondary text-xs font-weight-bold">{{$berita->created_at}}</span>
+                                <span class="text-secondary text-xs font-weight-bold">{{$event->start}} s.d {{$event->end}}</span>
                             </td>
                             <td>
-                              <a href="{{route('detail-berita', ['berita' => $berita->id])}}" class="btn btn-secondary  font-weight-bold text-xs" target="_blank"><i class="fas fa-eye"></i> Show</a>
+                              <a href="{{route('detail-event', ['event' => $event->id])}}" class="btn btn-secondary  font-weight-bold text-xs" target="_blank"><i class="fas fa-eye"></i> Show</a>
                               <button wire:click='' class="btn btn-default font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Approve Pengusulan">
                                 <i class="far fa-edit"></i> Edit
                               </button>
@@ -73,7 +69,7 @@
                         @empty
                         <tr>
                           <td colspan="4" class="text-center">
-                            <h6 class="text-muted">Belum ada Berita</h6>
+                            <h6 class="text-muted">Belum ada Event</h6>
                             
                           </td>
                         </tr>
@@ -101,7 +97,7 @@
 <script>
   window.addEventListener("create", event => {
     $('#konten').summernote({
-            placeholder: 'Mulai membuat berita...',
+            placeholder: 'Mulai membuat event...',
             tabsize: 2,
             height: 350,
             toolbar: [

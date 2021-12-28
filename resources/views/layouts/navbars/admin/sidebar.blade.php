@@ -96,28 +96,18 @@
                     <span class="nav-link-text ms-1">Berita</span>
                 </a>
             </li>
-            {{-- <li class="nav-item pb-2">
-                <a class="nav-link {{ Route::currentRouteName() == 'admin.halaman' ? 'active' : '' }}"
-                    href="{{ route('admin.halaman') }}">
-                    <div
-                        class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
-                        <i style="font-size: 1rem;" class="fas fa-lg fa-list-ul ps-2 pe-2 text-center
-                        {{ in_array(request()->route()->getName(),['admin.halaman']) ? 'text-white' : 'text-dark' }}"></i>
-                    </div>
-                    <span class="nav-link-text ms-1">Pages</span>
-                </a>
-            </li>
+            
             <li class="nav-item pb-2">
                 <a class="nav-link {{ Route::currentRouteName() == 'admin.event' ? 'active' : '' }}"
                     href="{{ route('admin.event') }}">
                     <div
                         class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
-                        <i style="font-size: 1rem;" class="fas fa-lg fa-list-ul ps-2 pe-2 text-center
+                        <i style="font-size: 1rem;" class="far fa-calendar-alt ps-2 pe-2 text-center
                         {{ in_array(request()->route()->getName(),['admin.event']) ? 'text-white' : 'text-dark' }}"></i>
                     </div>
                     <span class="nav-link-text ms-1">Event</span>
                 </a>
-            </li> --}}
+            </li>
 
             {{-- <li class="nav-item mt-2">
                 <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Pengaturan</h6>

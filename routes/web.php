@@ -25,6 +25,7 @@ use App\Http\Livewire\Admin\Dashboard as AdminDashboard;
 use App\Http\Livewire\Admin\Berita as AdminBerita;
 use App\Http\Livewire\Admin\Pengusulan as AdminPengusulan;
 use App\Http\Livewire\Admin\Pencatatan as AdminPencatatan;
+use App\Http\Livewire\Admin\Event as AdminEvent;
 
 
 use Illuminate\Http\Request;
@@ -46,6 +47,8 @@ Route::get('/wbtb/{wbtb}', [IndexController::class, 'detail'])->name('detail');
 Route::get('/preview/{id}', [IndexController::class, 'preview'])->name('preview');
 Route::get('/berita', [IndexController::class, 'berita'])->name('berita');
 Route::get('/berita/{berita}', [IndexController::class, 'detailBerita'])->name('detail-berita');
+Route::get('/event', [IndexController::class, 'event'])->name("event");
+Route::get('/event/{event}', [IndexController::class, 'detailEvent'])->name("detail-event");
 
 
 Route::get('/sign-up', SignUp::class)->name('sign-up');
@@ -74,6 +77,7 @@ Route::middleware('admin')->prefix('admin')->name('admin.')->group(function(){
     Route::get('/pengusulan', AdminPengusulan::class)->name('pengusulan');
     Route::get('/pencatatan', AdminPencatatan::class)->name('pencatatan');
     Route::get('/berita', AdminBerita::class)->name('berita');
+    Route::get('/event', AdminEvent::class)->name('event');
     // Route::get()->name('halaman');
     // Route::get()->name('event');
 });

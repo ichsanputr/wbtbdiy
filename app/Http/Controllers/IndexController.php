@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use Request;
 use App\Models\WarisanBudaya;
 use App\Models\User;
 use App\Models\Berita;
+use App\Models\Event;
 
 class IndexController extends Controller
 {
@@ -55,5 +56,27 @@ class IndexController extends Controller
     public function detailBerita(Berita $berita)
     {
         return view("detail-berita", ["berita" => $berita]);
+    }
+
+    public function event()
+    {
+            // Request::api();
+            $start = (!empty($_GET["start"])) ? ($_GET["start"]) : ('');
+            $end = (!empty($_GET["end"])) ? ($_GET["end"]) : ('');
+    
+            $data = Event::whereDate('start', '>=', $start)->whereDate('end',   '<=', $end)->get(['id','title','start', 'end']);
+            // dd(response()->json($data));
+            // dd($data);
+            $data = collect($data)->each(function($item, $key){
+                return $item["url"] = route("detail-event", ["event" => $item->id]);
+            });
+            // dd(response()->json($data));
+            return response()->json($data);
+       
+    }
+
+    public function detailEvent(Event $event)
+    {
+        return view("detail-event", ['event' => $event]);
     }
 }
