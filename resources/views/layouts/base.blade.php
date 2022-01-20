@@ -51,6 +51,7 @@
 <body class="g-sidenav-show bg-gray-100">
 
     {{ $slot }}
+    @stack('modal');
 
     <!--   Core JS Files   -->
     <script src="{{ asset('assets/js/core/popper.min.js') }}"></script>

@@ -2,7 +2,7 @@
     <div class="col-md-12">
         <div class="card card-body mb-4">
             <h6 class="mb-0">Event Baru</h6>
-            <p class="text-sm mb-0">Event Terbaru</p>
+            <p class="text-sm mb-0">Buat Event Terbaru</p>
             <hr class="horizontal dark my-3">
             <form wire:submit.prevent="save" method="POST" role="form text-left">
                 <div class="row">
@@ -16,7 +16,7 @@
                             @error('judul') <div class="text-danger">{{ $message }}</div> @enderror
                         </div>
                     </div>
-                    
+
                 </div>
                 <div class="row">
                     <div class="col-md-6">
@@ -33,8 +33,8 @@
                         <div class="form-group">
                             <label for="end" class="form-control-label">{{ __('Berakhir') }}</label>
                             <div class="@error('end') border border-danger rounded-3 @enderror">
-                                <input wire:model='end' class="form-control" type="datetime-local" placeholder="Berakhir"
-                                    id="end">
+                                <input wire:model='end' class="form-control" type="datetime-local"
+                                    placeholder="Berakhir" id="end">
                             </div>
                             @error('end') <div class="text-danger">{{ $message }}</div> @enderror
                         </div>
@@ -55,4 +55,3 @@
         </div>
     </div>
 </div>
-

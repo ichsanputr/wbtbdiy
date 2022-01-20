@@ -1,3 +1,4 @@
+<div>
 <main>
     <div class="container-fluid py-4">
       @if ($is_create)
@@ -64,7 +65,7 @@
                               <button wire:click='' class="btn btn-default font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Approve Pengusulan">
                                 <i class="far fa-edit"></i> Edit
                               </button>
-                              <button wire:click='' class="btn btn-danger font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Approve Pengusulan">
+                              <button wire:click='deleteId({{$berita->id}})' class="btn btn-danger font-weight-bold text-xs" data-bs-toggle="modal" data-bs-target="#delete">
                                 <i class="fas fa-trash-alt"></i> Hapus
                               </button>
                             
@@ -131,3 +132,25 @@
 
 </script>
 @endpush
+
+<div wire:ignore.self class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="deleteLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+      <div class="modal-content">
+          <div class="modal-header">
+              <h5 class="modal-title" id="deleteLabel">Konfirmasi Hapus Berita</h5>
+              <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                   <span aria-hidden="true close-btn">x</span>
+              </button>
+          </div>
+         <div class="modal-body">
+              <p>Apakah anda yakin akan menghapus berita <strong>{{$judul}}</strong>?</p>
+          </div>
+          <div class="modal-footer">
+              <button type="button" class="btn btn-secondary close-btn" data-bs-dismiss="modal">Tidak</button>
+              <button type="button" wire:click.prevent="delete" class="btn btn-danger close-modal" data-bs-dismiss="modal">Ya</button>
+          </div>
+      </div>
+  </div>
+</div>
+
+</div>

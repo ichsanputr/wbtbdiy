@@ -13,6 +13,9 @@ class Pencatatan extends Component
     public $domain;
     public $kondisi;
     public $deskripsi;
+    public $is_create = false;
+    public $is_update = false;
+    public $selected_id;
     
 
     public $showSuccesNotification  = false;
@@ -44,10 +47,11 @@ class Pencatatan extends Component
             'deskripsi' => $this->deskripsi,
             'foto' => json_encode($this->uploadFoto()),
             'user_id' => auth()->user()->id,
+            'is_approved' => 1
         ]);
 
         session()->flash('message', 'Berhasil membuat pencatatan');
-        return redirect()->to('/user/pencatatan');
+        return redirect()->to('/admin/pencatatan');
     }
 
     public function uploadFoto(){
@@ -90,6 +94,56 @@ class Pencatatan extends Component
 
     public function render()
     {
-        return view('livewire.admin.pencatatan', ['warisan_budaya' => WarisanBudaya::whereUserId(auth()->user()->id)->get()]);
+        return view('livewire.admin.pencatatan.main', ['warisan_budaya' => WarisanBudaya::whereUserId(auth()->user()->id)->orderByDesc("id")->get()]);
+    }
+
+    public function create()
+    {
+        $this->is_create = true;
+        $this->is_update = false;
+        $this->judul = null;
+        $this->lokasi = null;
+        $this->pelaku = null;
+        $this->domain = null;
+        $this->kondisi = null;
+        $this->deskripsi = null;
+        $this->selected_id = null;
+        $this->dispatchBrowserEvent('create');
+    }
+
+    public function deleteId($id)
+    {
+        $pencatatan = WarisanBudaya::findOrFail($id);
+        $this->judul = $pencatatan->judul;
+        $this->selected_id = $id;
+    }
+
+    public function delete()
+    {
+        // dd($this->selected_id);
+        $pencatatan = WarisanBudaya::findOrFail($this->selected_id);
+        $pencatatan->delete();
+        $this->selected_id = null;
+        $this->judul = null;
+        $this->message = "Berhasil menghapus Pencatatan Warisan Budaya.";
+    }
+
+    public function edit($selected_id)
+    {
+        $this->is_create = false;
+        $warisan_budaya = WarisanBudaya::findOrFail($selected_id);
+        $this->judul = $warisan_budaya->judul;
+        $this->lokasi = $warisan_budaya->lokasi;
+        $this->pelaku = $warisan_budaya->pelaku;
+        $this->domain = $warisan_budaya->domain;
+        $this->kondisi = $warisan_budaya->kondisi;
+        $this->deskripsi = $warisan_budaya->deskripsi;
+        $this->is_update = true;
+        $this->selected_id = $selected_id;
+        
+        $this->dispatchBrowserEvent('create');
+
+        // dd($this->deskripsi);
+        
     }
 }

@@ -41,6 +41,23 @@ class Event extends Component
 
         $this->is_create = false;
         $this->is_update = false;
-        $this->message = "Berhasil membuat Event. Lihat Event <a href='".route('detail-event', ['event'=>$event->id])."' target='_blank'>di sini</a>";
+        $this->message = "Berhasil membuat Event. Lihat Event <a href='" . route('detail-event', ['event' => $event->id]) . "' target='_blank'>di sini</a>";
+    }
+
+    public function deleteId($id)
+    {
+        $event = EventModel::findOrFail($id);
+        $this->judul = $event->title;
+        $this->selected_id = $id;
+    }
+
+    public function delete()
+    {
+        // dd($this->selected_id);
+        $event = EventModel::findOrFail($this->selected_id);
+        $event->delete();
+        $this->selected_id = null;
+        $this->judul = null;
+        $this->message = "Berhasil menghapus Event.";
     }
 }
