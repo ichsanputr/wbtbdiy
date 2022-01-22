@@ -84,7 +84,7 @@
                                         <td colspan="5" class="text-center">
                                             <h6 class="text-muted">Belum ada Pencatatan Warisan Budaya</h6>
                                             {{-- <a class="btn bg-gradient-dark btn-md mt-4 mb-4" href=""><i
-                                                    class="fas fa-plus"></i> Buat Baru</a> --}}
+                                                    class="fas fa-plus"></i> </a> --}}
                                         </td>
                                     </tr>
                                     @endforelse
@@ -106,10 +106,10 @@
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
 <script>
+  // dashboard pencatatan
   window.addEventListener("create", event => {
-    
     $('#deskripsi').summernote({
-            placeholder: 'Deskripsi Warisan Budaya...',
+            placeholder: '',
             tabsize: 2,
             height: 350,
             toolbar: [
@@ -125,9 +125,9 @@
             dialogsInBody: true,
             dialogsFade: false,
             callbacks: {
-                // onChange: function(contents, $editable) {
-                //             @this.set('deskripsi', contents);
-                // },
+                onChange: function(contents, $editable) {
+                            @this.set('deskripsi', "joko");
+                },
                 onPaste: function(e){
                     var bufferText = ((e.originalEvent || e).clipboardData || window.clipboardData).getData('Text');
                     e.preventDefault();
@@ -135,8 +135,46 @@
                 }
             }
         });
+
+        // fill content
+        $("#deskripsi").summernote("code",'');
+
     }); 
     
+    
+    window.addEventListener("edit", event => {
+    $('#deskripsi').summernote({
+            placeholder: event.detail.newName,
+            tabsize: 2,
+            height: 350,
+            toolbar: [
+                // [groupName, [list of button]]
+                ['style', ['bold', 'italic', 'underline', 'clear']],
+                ['font', ['strikethrough', 'superscript', 'subscript']],
+                ['fontsize', ['fontsize']],
+                ['color', ['color']],
+                ['para', ['ul', 'ol', 'paragraph']],
+                ['height', ['height']],
+                ['insert', ['picture', 'link', 'video', 'table', 'hr']]
+            ],
+            dialogsInBody: true,
+            dialogsFade: false,
+            callbacks: {
+                onChange: function(contents, $editable) {
+                            @this.set('deskripsi', "joko");
+                },
+                onPaste: function(e){
+                    var bufferText = ((e.originalEvent || e).clipboardData || window.clipboardData).getData('Text');
+                    e.preventDefault();
+                    document.execCommand('insertText', false, bufferText);
+                }
+            }
+        });
+
+        // fill content
+        $("#deskripsi").summernote("code", event.detail.newName);
+
+    });
           
 
 </script>

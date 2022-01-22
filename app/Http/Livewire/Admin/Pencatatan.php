@@ -99,16 +99,17 @@ class Pencatatan extends Component
 
     public function create()
     {
+        
         $this->is_create = true;
         $this->is_update = false;
-        $this->judul = null;
+        $this->judul =null;
         $this->lokasi = null;
         $this->pelaku = null;
-        $this->domain = null;
+        $this->domain = "joko";
         $this->kondisi = null;
         $this->deskripsi = null;
         $this->selected_id = null;
-        $this->dispatchBrowserEvent('create');
+        $this->dispatchBrowserEvent('create',['data' => ""]);
     }
 
     public function deleteId($id)
@@ -137,13 +138,12 @@ class Pencatatan extends Component
         $this->pelaku = $warisan_budaya->pelaku;
         $this->domain = $warisan_budaya->domain;
         $this->kondisi = $warisan_budaya->kondisi;
-        $this->deskripsi = $warisan_budaya->deskripsi;
         $this->is_update = true;
         $this->selected_id = $selected_id;
-        
-        $this->dispatchBrowserEvent('create');
+       
+        // $warisan_budaya->deskripsi dibawa ke event
+        $this->dispatchBrowserEvent('edit',['newName' => $warisan_budaya->deskripsi]);
 
-        // dd($this->deskripsi);
         
     }
 }
