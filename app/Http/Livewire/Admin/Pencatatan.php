@@ -16,6 +16,7 @@ class Pencatatan extends Component
     public $is_create = false;
     public $is_update = false;
     public $selected_id;
+    public $message;
     
 
     public $showSuccesNotification  = false;
@@ -99,17 +100,16 @@ class Pencatatan extends Component
 
     public function create()
     {
-        
         $this->is_create = true;
         $this->is_update = false;
         $this->judul =null;
         $this->lokasi = null;
         $this->pelaku = null;
-        $this->domain = "joko";
+        $this->domain = null;
         $this->kondisi = null;
         $this->deskripsi = null;
         $this->selected_id = null;
-        $this->dispatchBrowserEvent('create',['data' => ""]);
+        $this->dispatchBrowserEvent('create');
     }
 
     public function deleteId($id)
@@ -140,10 +140,28 @@ class Pencatatan extends Component
         $this->kondisi = $warisan_budaya->kondisi;
         $this->is_update = true;
         $this->selected_id = $selected_id;
+        $this->deskripsi = $warisan_budaya->deskripsi;
+        // dd($this->deskripsi);
        
         // $warisan_budaya->deskripsi dibawa ke event
         $this->dispatchBrowserEvent('edit',['newName' => $warisan_budaya->deskripsi]);
+    }
 
-        
+    public function update()
+    {
+        $warisan_budaya = WarisanBudaya::findOrFail($this->selected_id);
+
+        $warisan_budaya->judul = $this->judul;
+        $warisan_budaya->lokasi = $this->lokasi;
+        $warisan_budaya->pelaku = $this->pelaku;
+        $warisan_budaya->domain = $this->domain;
+        $warisan_budaya->kondisi = $this->kondisi;
+        $warisan_budaya->deskripsi = $this->deskripsi;
+        $warisan_budaya->foto = json_encode($this->uploadFoto());
+        $warisan_budaya->save();
+
+        $this->is_update = false;
+
+        $this->message = "Berhasil memperbarui Pencatatan Warisan Budaya.";
     }
 }

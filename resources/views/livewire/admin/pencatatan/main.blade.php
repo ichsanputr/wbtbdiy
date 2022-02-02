@@ -21,6 +21,14 @@
                         </div>
                     </div>
                     <div class="card-body px-0 pt-0 pb-2">
+
+                        @if ($this->message)
+                        <div class="mt-3 alert alert-primary alert-dismissible fade show" role="alert">
+                        <span class="alert-icon text-white"><i class="ni ni-like-2"></i></span>
+                        <span class="alert-text text-white">{!! $this->message !!}</span>
+                        </div>
+                        @endif
+
                         <div class="table-responsive p-0">
                             <table class="table align-items-center mb-0">
                                 <thead>
@@ -108,71 +116,72 @@
 <script>
   // dashboard pencatatan
   window.addEventListener("create", event => {
-    $('#deskripsi').summernote({
-            placeholder: '',
-            tabsize: 2,
-            height: 350,
-            toolbar: [
-                // [groupName, [list of button]]
-                ['style', ['bold', 'italic', 'underline', 'clear']],
-                ['font', ['strikethrough', 'superscript', 'subscript']],
-                ['fontsize', ['fontsize']],
-                ['color', ['color']],
-                ['para', ['ul', 'ol', 'paragraph']],
-                ['height', ['height']],
-                ['insert', ['picture', 'link', 'video', 'table', 'hr']]
-            ],
-            dialogsInBody: true,
-            dialogsFade: false,
-            callbacks: {
-                onChange: function(contents, $editable) {
-                            @this.set('deskripsi', "joko");
-                },
-                onPaste: function(e){
-                    var bufferText = ((e.originalEvent || e).clipboardData || window.clipboardData).getData('Text');
-                    e.preventDefault();
-                    document.execCommand('insertText', false, bufferText);
-                }
-            }
-        });
+
+    // $('#deskripsi').summernote({
+    //         placeholder: 'Deskripsi Warisan Budaya',
+    //         tabsize: 2,
+    //         height: 350,
+    //         toolbar: [
+    //             // [groupName, [list of button]]
+    //             ['style', ['bold', 'italic', 'underline', 'clear']],
+    //             ['font', ['strikethrough', 'superscript', 'subscript']],
+    //             ['fontsize', ['fontsize']],
+    //             ['color', ['color']],
+    //             ['para', ['ul', 'ol', 'paragraph']],
+    //             ['height', ['height']],
+    //             ['insert', ['picture', 'link', 'video', 'table', 'hr']]
+    //         ],
+    //         dialogsInBody: true,
+    //         dialogsFade: false,
+    //         callbacks: {
+    //             onChange: function(contents, $editable) {
+    //                         @this.set('deskripsi', contents);
+    //             },
+    //             onPaste: function(e){
+    //                 var bufferText = ((e.originalEvent || e).clipboardData || window.clipboardData).getData('Text');
+    //                 e.preventDefault();
+    //                 document.execCommand('insertText', false, bufferText);
+    //             }
+    //         }
+    //     });
 
         // fill content
-        $("#deskripsi").summernote("code",'');
+        // $("#deskripsi").summernote('enable');
+        $('#deskripsi').summernote('reset');
+        $("#deskripsi").summernote('code', '');
 
     }); 
     
     
     window.addEventListener("edit", event => {
-    $('#deskripsi').summernote({
-            placeholder: event.detail.newName,
-            tabsize: 2,
-            height: 350,
-            toolbar: [
-                // [groupName, [list of button]]
-                ['style', ['bold', 'italic', 'underline', 'clear']],
-                ['font', ['strikethrough', 'superscript', 'subscript']],
-                ['fontsize', ['fontsize']],
-                ['color', ['color']],
-                ['para', ['ul', 'ol', 'paragraph']],
-                ['height', ['height']],
-                ['insert', ['picture', 'link', 'video', 'table', 'hr']]
-            ],
-            dialogsInBody: true,
-            dialogsFade: false,
-            callbacks: {
-                onChange: function(contents, $editable) {
-                            @this.set('deskripsi', "joko");
-                },
-                onPaste: function(e){
-                    var bufferText = ((e.originalEvent || e).clipboardData || window.clipboardData).getData('Text');
-                    e.preventDefault();
-                    document.execCommand('insertText', false, bufferText);
-                }
-            }
-        });
+    // $('#deskripsi').summernote({
+    //         toolbar: [
+    //             // [groupName, [list of button]]
+    //             ['style', ['bold', 'italic', 'underline', 'clear']],
+    //             ['font', ['strikethrough', 'superscript', 'subscript']],
+    //             ['fontsize', ['fontsize']],
+    //             ['color', ['color']],
+    //             ['para', ['ul', 'ol', 'paragraph']],
+    //             ['height', ['height']],
+    //             ['insert', ['picture', 'link', 'video', 'table', 'hr']]
+    //         ],
+    //         // callbacks: {
+    //         //     onChange: function(contents, $editable) {
+    //         //                 @this.set('deskripsi', contents);
+    //         //     },
+    //         //     onPaste: function(e){
+    //         //         var bufferText = ((e.originalEvent || e).clipboardData || window.clipboardData).getData('Text');
+    //         //         e.preventDefault();
+    //         //         document.execCommand('insertText', false, bufferText);
+    //         //     }
+    //         // }
+    //     }, event.detail.newName);
 
         // fill content
-        $("#deskripsi").summernote("code", event.detail.newName);
+
+        $("#deskripsi").summernote('code', event.detail.newName);
+        
+        
 
     });
           
@@ -180,23 +189,23 @@
 </script>
 @endpush
 
-<div wire:ignore.self class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="deleteLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="deleteLabel">Konfirmasi Hapus Pencatatan</h5>
-                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-                     <span aria-hidden="true close-btn">x</span>
-                </button>
-            </div>
-           <div class="modal-body">
-                <p>Apakah anda yakin akan menghapus pencatatan <strong>{{$judul}}</strong> ?</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary close-btn" data-bs-dismiss="modal">Tidak</button>
-                <button type="button" wire:click.prevent="delete" class="btn btn-danger close-modal" data-bs-dismiss="modal">Ya</button>
+    <div wire:ignore.self class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="deleteLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="deleteLabel">Konfirmasi Hapus Pencatatan</h5>
+                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true close-btn">x</span>
+                    </button>
+                </div>
+            <div class="modal-body">
+                    <p>Apakah anda yakin akan menghapus pencatatan <strong>{{$judul}}</strong> ?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary close-btn" data-bs-dismiss="modal">Tidak</button>
+                    <button type="button" wire:click.prevent="delete" class="btn btn-danger close-modal" data-bs-dismiss="modal">Ya</button>
+                </div>
             </div>
         </div>
     </div>
-  </div>
 </div>

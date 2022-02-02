@@ -92,7 +92,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="form-group" wire:ignore>
+                <div class="form-group">
                     <label for="deskripsi">{{ 'Deskripsi' }}</label>
                     <div class="@error('deskripsi') border border-danger rounded-3 @enderror">
                         <textarea wire:model='deskripsi' name="deskripsi" class="form-control" id="deskripsi" rows="3"

@@ -60,4 +60,34 @@ class Event extends Component
         $this->judul = null;
         $this->message = "Berhasil menghapus Event.";
     }
+
+    public function edit($id)
+    {
+        $event = EventModel::findOrFail($id);
+
+        $this->judul = $event->title;
+        $this->konten = $event->konten;
+        $this->start = $event->start;
+        $this->end = $event->end;
+        $event->save();
+
+        $this->is_update = false;
+
+        $this->message = "Berhasil memperbarui Event.";
+    }
+
+    public function update()
+    {
+        $event = EventModel::findOrFail($this->selected_id);
+
+        $event->tittle = $this->judul;
+        $event->konten = $this->konten;
+        $event->start = $this->start;
+        $event->end = $this->end;
+        $event->save();
+
+        $this->is_update = false;
+
+        $this->message = "Berhasil memperbarui Event.";
+    }
 }

@@ -21,12 +21,7 @@
             </div>
           </div>
           <div class="card-body px-0 pt-0 pb-2">
-            @if (session()->has('message'))
-            <div class="mt-3 alert alert-primary alert-dismissible fade show" role="alert">
-              <span class="alert-icon text-white"><i class="ni ni-like-2"></i></span>
-              <span class="alert-text text-white">{!! session('message') !!}</span>
-            </div>
-            @endif
+            
             @if ($this->message)
             <div class="mt-3 alert alert-primary alert-dismissible fade show" role="alert">
               <span class="alert-icon text-white"><i class="ni ni-like-2"></i></span>
