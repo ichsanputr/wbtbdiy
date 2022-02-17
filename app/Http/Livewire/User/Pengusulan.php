@@ -105,5 +105,10 @@ class Pengusulan extends Component
             $i = end($this->fieldsAvailable) + 1;
             array_push($this->fieldsAvailable ,$i);
         }
+
+        if (count($this->fieldsAvailable) != 0){
+            $i = end($this->fieldsAvailable) + 1;
+            array_push($this->fieldsAvailable ,$i);
+        }
     }
 }
